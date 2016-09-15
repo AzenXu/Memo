@@ -43,6 +43,10 @@
 		B5EFB8871D8A451500BF1F9B /* UIColor+Smart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8821D8A451500BF1F9B /* UIColor+Smart.swift */; };
 		B5EFB8881D8A451500BF1F9B /* UIView+Smart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8831D8A451500BF1F9B /* UIView+Smart.swift */; };
 		B5EFB88A1D8A476B00BF1F9B /* SmartTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8891D8A476B00BF1F9B /* SmartTask.swift */; };
+		B5EFB88C1D8A480600BF1F9B /* Configs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB88B1D8A480600BF1F9B /* Configs.swift */; };
+		B5EFB8901D8A486C00BF1F9B /* GroupListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB88D1D8A486C00BF1F9B /* GroupListViewController.swift */; };
+		B5EFB8911D8A486C00BF1F9B /* KnowlageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB88E1D8A486C00BF1F9B /* KnowlageDetailViewController.swift */; };
+		B5EFB8921D8A486C00BF1F9B /* KnowlageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB88F1D8A486C00BF1F9B /* KnowlageListViewController.swift */; };
 		BCF5D46E49EF5064B5BB7B0E /* Pods_MemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D82D01147CB0E643682B95E /* Pods_MemoUITests.framework */; };
 		EBDB08065E5B9BE5278793A2 /* Pods_Memo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F544942F459AF57E3F3823D1 /* Pods_Memo.framework */; };
 /* End PBXBuildFile section */
@@ -109,6 +113,10 @@
 		B5EFB8821D8A451500BF1F9B /* UIColor+Smart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Smart.swift"; sourceTree = "<group>"; };
 		B5EFB8831D8A451500BF1F9B /* UIView+Smart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Smart.swift"; sourceTree = "<group>"; };
 		B5EFB8891D8A476B00BF1F9B /* SmartTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartTask.swift; sourceTree = "<group>"; };
+		B5EFB88B1D8A480600BF1F9B /* Configs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configs.swift; sourceTree = "<group>"; };
+		B5EFB88D1D8A486C00BF1F9B /* GroupListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupListViewController.swift; sourceTree = "<group>"; };
+		B5EFB88E1D8A486C00BF1F9B /* KnowlageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnowlageDetailViewController.swift; sourceTree = "<group>"; };
+		B5EFB88F1D8A486C00BF1F9B /* KnowlageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnowlageListViewController.swift; sourceTree = "<group>"; };
 		B74E746882D538C4C4F301CE /* Pods-MemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemoUITests/Pods-MemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE58B5699B223BFB8DDCFC08 /* Pods-Memo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Memo/Pods-Memo.release.xcconfig"; sourceTree = "<group>"; };
 		D3A0FECFF33F493138E8451B /* Pods-MemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemoTests/Pods-MemoTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -226,6 +234,9 @@
 		B50F93A41D8A39FA00742FA0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B5EFB88D1D8A486C00BF1F9B /* GroupListViewController.swift */,
+				B5EFB88E1D8A486C00BF1F9B /* KnowlageDetailViewController.swift */,
+				B5EFB88F1D8A486C00BF1F9B /* KnowlageListViewController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -267,6 +278,7 @@
 		B5EFB83B1D8A415900BF1F9B /* Configs */ = {
 			isa = PBXGroup;
 			children = (
+				B5EFB88B1D8A480600BF1F9B /* Configs.swift */,
 			);
 			path = Configs;
 			sourceTree = "<group>";
@@ -574,6 +586,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5EFB8901D8A486C00BF1F9B /* GroupListViewController.swift in Sources */,
 				B5EFB8621D8A41BC00BF1F9B /* NSObject+Stec.swift in Sources */,
 				B5EFB8851D8A451500BF1F9B /* UITableView+Smart.swift in Sources */,
 				B5EFB8781D8A448A00BF1F9B /* KeyboardMan.swift in Sources */,
@@ -585,12 +598,15 @@
 				B5EFB8701D8A41BC00BF1F9B /* UITabBar+Stec.swift in Sources */,
 				B5EFB8841D8A451500BF1F9B /* UIButton+Smart.swift in Sources */,
 				B5EFB83F1D8A416A00BF1F9B /* AttributeStringMaker.swift in Sources */,
+				B5EFB8921D8A486C00BF1F9B /* KnowlageListViewController.swift in Sources */,
 				B5EFB8861D8A451500BF1F9B /* String+Smart.swift in Sources */,
+				B5EFB8911D8A486C00BF1F9B /* KnowlageDetailViewController.swift in Sources */,
 				B5EFB87A1D8A44A000BF1F9B /* Async.swift in Sources */,
 				B5EFB85E1D8A41BC00BF1F9B /* Int64+Stec.swift in Sources */,
 				B5EFB86D1D8A41BC00BF1F9B /* UILabel+Stec.swift in Sources */,
 				B5EFB87C1D8A44B700BF1F9B /* Reachability.swift in Sources */,
 				B5EFB8651D8A41BC00BF1F9B /* String+Stec.swift in Sources */,
+				B5EFB88C1D8A480600BF1F9B /* Configs.swift in Sources */,
 				B5EFB8871D8A451500BF1F9B /* UIColor+Smart.swift in Sources */,
 				B50F93A91D8A3A1500742FA0 /* AppDelegate.swift in Sources */,
 				B5EFB86C1D8A41BC00BF1F9B /* UIImageView+Stec.swift in Sources */,
