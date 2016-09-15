@@ -11,11 +11,13 @@ import UIKit
 class KnowledgeListViewController: BaseViewController {
     
     //  basic data
-    var datas = ["","","","","","","","","","","","","","","","","","","","","",""]
+    var datas = ["","",""]
+    var oldKnowledge = ["","","","","","","","","","","","","","","","","","",""]
+    var showOldKnowledge = false
     
     //  basic UI
     lazy var backgroundView: UIImageView = {return UIImageView()}()
-    lazy var tableView: UITableView = {return UITableView()}()
+    lazy var tableView: UITableView = {return UITableView(frame: CGRectZero, style: UITableViewStyle.Grouped)}()
     
     enum ListStyle: Int {
         case AddKnowledge, ShowOldKnowledge
@@ -36,12 +38,12 @@ extension KnowledgeListViewController {
     
     private func _setupViews() {
         view.backgroundColor = UIColor.stec_randomColor()
-        title = "知识列表页"
+        title = "记忆豆"
         
 //        navigationController?.navigationBar.barTintColor = UIColor.blackColor()
         backgroundView.then {
             view.addSubview($0)
-            $0.image = UIImage(named: "knowledge_list_background")
+            $0.image = UIImage(named: "knowledge_list_background_2")
             $0.contentMode = UIViewContentMode.ScaleAspectFill
             $0.clipsToBounds = true
             $0.snp_remakeConstraints(closure: { (make) in
@@ -62,7 +64,7 @@ extension KnowledgeListViewController {
             table.snp_remakeConstraints(closure: { (make) in
                 make.left.equalTo(0)
                 make.right.equalTo(0)
-                make.top.equalTo(60)
+                make.top.equalTo(65)
                 make.bottom.equalTo(0)
             })
             
@@ -82,7 +84,11 @@ extension KnowledgeListViewController: UITableViewDelegate, UITableViewDataSourc
         case .AddKnowledge:
             return datas.count
         case .ShowOldKnowledge:
-            return 0
+            if showOldKnowledge {
+                return oldKnowledge.count
+            } else {
+                return 0
+            }
         }
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -97,9 +103,18 @@ extension KnowledgeListViewController: UITableViewDelegate, UITableViewDataSourc
         guard let style = ListStyle(rawValue: section) else { return nil }
         switch style {
         case .AddKnowledge:
-            return AddKnowledgeHeader()
+            let header = AddKnowledgeHeader()
+            return header
         case .ShowOldKnowledge:
-            return UIView()
+            let header = ShowOldKnowledgeHeader()
+            header.titleButton.selected = showOldKnowledge
+            header.selectedCallBack = { [weak self] isSelected in
+                guard let `self` = self else {return}
+                print(isSelected)
+                self.showOldKnowledge = isSelected
+                self.tableView.reloadSections(NSIndexSet.init(index: ListStyle.ShowOldKnowledge.rawValue), withRowAnimation: UITableViewRowAnimation.Fade)
+            }
+            return header
         }
     }
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -108,7 +123,7 @@ extension KnowledgeListViewController: UITableViewDelegate, UITableViewDataSourc
         case .AddKnowledge:
             return 80
         case .ShowOldKnowledge:
-            return 100
+            return 60
         }
 
     }

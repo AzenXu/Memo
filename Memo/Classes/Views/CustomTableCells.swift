@@ -130,3 +130,39 @@ class AddKnowledgeHeader: UIView {
     }
 }
 
+class ShowOldKnowledgeHeader: UIView {
+    
+    lazy var titleButton: UIButton = {return UIButton()}()
+    var selectedCallBack: ((isSelected: Bool)->())?
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        titleButton.then {
+            addSubview($0)
+            $0.addTarget(self, action: #selector(titleButtonSelected), forControlEvents: UIControlEvents.TouchUpInside)
+            $0.setTitle("显示已记住豆子", forState: UIControlState.Normal)
+            $0.setTitle("隐藏已记住豆子", forState: UIControlState.Selected)
+            $0.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+            $0.titleLabel?.font = UIFont.systemFontOfSize(14)
+            $0.titleLabel?.textAlignment = NSTextAlignment.Center
+            $0.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.5)
+            $0.layer.cornerRadius = 5
+            $0.snp_remakeConstraints(closure: { (make) in
+                make.center.equalTo(0)
+                make.width.equalTo(120)
+                make.height.equalTo(30)
+            })
+        }
+    }
+    
+    func titleButtonSelected() {
+        titleButton.selected = !titleButton.selected
+        selectedCallBack?(isSelected: titleButton.selected)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
