@@ -7,6 +7,7 @@ target 'Memo' do
 
   # Pods for Memo
   pod 'SnapKit'
+  pod 'Then'
   
   target 'MemoTests' do
     inherit! :search_paths

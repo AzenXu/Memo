@@ -14,7 +14,35 @@
 		B50F938C1D8A396800742FA0 /* MemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F938B1D8A396800742FA0 /* MemoTests.swift */; };
 		B50F93971D8A396800742FA0 /* MemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F93961D8A396800742FA0 /* MemoUITests.swift */; };
 		B50F93A91D8A3A1500742FA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F93A81D8A3A1500742FA0 /* AppDelegate.swift */; };
-		B50F93AB1D8A3A6C00742FA0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F93AA1D8A3A6C00742FA0 /* BaseViewController.swift */; };
+		B5EFB83D1D8A415900BF1F9B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB83A1D8A415900BF1F9B /* BaseViewController.swift */; };
+		B5EFB83F1D8A416A00BF1F9B /* AttributeStringMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB83E1D8A416A00BF1F9B /* AttributeStringMaker.swift */; };
+		B5EFB85B1D8A41BC00BF1F9B /* Array+Stec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8411D8A41BC00BF1F9B /* Array+Stec.swift */; };
+		B5EFB85C1D8A41BC00BF1F9B /* CALayer+Stec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8421D8A41BC00BF1F9B /* CALayer+Stec.swift */; };
+		B5EFB85D1D8A41BC00BF1F9B /* CGFloat+Stec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8431D8A41BC00BF1F9B /* CGFloat+Stec.swift */; };
+		B5EFB85E1D8A41BC00BF1F9B /* Int64+Stec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8441D8A41BC00BF1F9B /* Int64+Stec.swift */; };
+		B5EFB8611D8A41BC00BF1F9B /* NSDate+Stec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8471D8A41BC00BF1F9B /* NSDate+Stec.swift */; };
+		B5EFB8621D8A41BC00BF1F9B /* NSObject+Stec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8481D8A41BC00BF1F9B /* NSObject+Stec.swift */; };
+		B5EFB8641D8A41BC00BF1F9B /* String+FileExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB84A1D8A41BC00BF1F9B /* String+FileExtension.swift */; };
+		B5EFB8651D8A41BC00BF1F9B /* String+Stec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB84B1D8A41BC00BF1F9B /* String+Stec.swift */; };
+		B5EFB8661D8A41BC00BF1F9B /* String+Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB84C1D8A41BC00BF1F9B /* String+Value.swift */; };
+		B5EFB8681D8A41BC00BF1F9B /* UICollectionView+Stec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB84E1D8A41BC00BF1F9B /* UICollectionView+Stec.swift */; };
+		B5EFB86B1D8A41BC00BF1F9B /* UIImage+Stec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8511D8A41BC00BF1F9B /* UIImage+Stec.swift */; };
+		B5EFB86C1D8A41BC00BF1F9B /* UIImageView+Stec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8521D8A41BC00BF1F9B /* UIImageView+Stec.swift */; };
+		B5EFB86D1D8A41BC00BF1F9B /* UILabel+Stec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8531D8A41BC00BF1F9B /* UILabel+Stec.swift */; };
+		B5EFB86E1D8A41BC00BF1F9B /* UINavigationBar+Stec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8541D8A41BC00BF1F9B /* UINavigationBar+Stec.swift */; };
+		B5EFB86F1D8A41BC00BF1F9B /* UIScrollView+Stec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8551D8A41BC00BF1F9B /* UIScrollView+Stec.swift */; };
+		B5EFB8701D8A41BC00BF1F9B /* UITabBar+Stec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8561D8A41BC00BF1F9B /* UITabBar+Stec.swift */; };
+		B5EFB8721D8A41BC00BF1F9B /* UIView+Stec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8581D8A41BC00BF1F9B /* UIView+Stec.swift */; };
+		B5EFB8731D8A41BC00BF1F9B /* UIViewcontroller+Stec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8591D8A41BC00BF1F9B /* UIViewcontroller+Stec.swift */; };
+		B5EFB8781D8A448A00BF1F9B /* KeyboardMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8771D8A448A00BF1F9B /* KeyboardMan.swift */; };
+		B5EFB87A1D8A44A000BF1F9B /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8791D8A44A000BF1F9B /* Async.swift */; };
+		B5EFB87C1D8A44B700BF1F9B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB87B1D8A44B700BF1F9B /* Reachability.swift */; };
+		B5EFB8841D8A451500BF1F9B /* UIButton+Smart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB87F1D8A451500BF1F9B /* UIButton+Smart.swift */; };
+		B5EFB8851D8A451500BF1F9B /* UITableView+Smart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8801D8A451500BF1F9B /* UITableView+Smart.swift */; };
+		B5EFB8861D8A451500BF1F9B /* String+Smart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8811D8A451500BF1F9B /* String+Smart.swift */; };
+		B5EFB8871D8A451500BF1F9B /* UIColor+Smart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8821D8A451500BF1F9B /* UIColor+Smart.swift */; };
+		B5EFB8881D8A451500BF1F9B /* UIView+Smart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8831D8A451500BF1F9B /* UIView+Smart.swift */; };
+		B5EFB88A1D8A476B00BF1F9B /* SmartTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8891D8A476B00BF1F9B /* SmartTask.swift */; };
 		BCF5D46E49EF5064B5BB7B0E /* Pods_MemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D82D01147CB0E643682B95E /* Pods_MemoUITests.framework */; };
 		EBDB08065E5B9BE5278793A2 /* Pods_Memo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F544942F459AF57E3F3823D1 /* Pods_Memo.framework */; };
 /* End PBXBuildFile section */
@@ -52,7 +80,35 @@
 		B50F93961D8A396800742FA0 /* MemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoUITests.swift; sourceTree = "<group>"; };
 		B50F93981D8A396800742FA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B50F93A81D8A3A1500742FA0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B50F93AA1D8A3A6C00742FA0 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		B5EFB83A1D8A415900BF1F9B /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		B5EFB83E1D8A416A00BF1F9B /* AttributeStringMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeStringMaker.swift; sourceTree = "<group>"; };
+		B5EFB8411D8A41BC00BF1F9B /* Array+Stec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Stec.swift"; sourceTree = "<group>"; };
+		B5EFB8421D8A41BC00BF1F9B /* CALayer+Stec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+Stec.swift"; sourceTree = "<group>"; };
+		B5EFB8431D8A41BC00BF1F9B /* CGFloat+Stec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Stec.swift"; sourceTree = "<group>"; };
+		B5EFB8441D8A41BC00BF1F9B /* Int64+Stec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int64+Stec.swift"; sourceTree = "<group>"; };
+		B5EFB8471D8A41BC00BF1F9B /* NSDate+Stec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Stec.swift"; sourceTree = "<group>"; };
+		B5EFB8481D8A41BC00BF1F9B /* NSObject+Stec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Stec.swift"; sourceTree = "<group>"; };
+		B5EFB84A1D8A41BC00BF1F9B /* String+FileExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+FileExtension.swift"; sourceTree = "<group>"; };
+		B5EFB84B1D8A41BC00BF1F9B /* String+Stec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Stec.swift"; sourceTree = "<group>"; };
+		B5EFB84C1D8A41BC00BF1F9B /* String+Value.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Value.swift"; sourceTree = "<group>"; };
+		B5EFB84E1D8A41BC00BF1F9B /* UICollectionView+Stec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Stec.swift"; sourceTree = "<group>"; };
+		B5EFB8511D8A41BC00BF1F9B /* UIImage+Stec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Stec.swift"; sourceTree = "<group>"; };
+		B5EFB8521D8A41BC00BF1F9B /* UIImageView+Stec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Stec.swift"; sourceTree = "<group>"; };
+		B5EFB8531D8A41BC00BF1F9B /* UILabel+Stec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Stec.swift"; sourceTree = "<group>"; };
+		B5EFB8541D8A41BC00BF1F9B /* UINavigationBar+Stec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Stec.swift"; sourceTree = "<group>"; };
+		B5EFB8551D8A41BC00BF1F9B /* UIScrollView+Stec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Stec.swift"; sourceTree = "<group>"; };
+		B5EFB8561D8A41BC00BF1F9B /* UITabBar+Stec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITabBar+Stec.swift"; sourceTree = "<group>"; };
+		B5EFB8581D8A41BC00BF1F9B /* UIView+Stec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Stec.swift"; sourceTree = "<group>"; };
+		B5EFB8591D8A41BC00BF1F9B /* UIViewcontroller+Stec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewcontroller+Stec.swift"; sourceTree = "<group>"; };
+		B5EFB8771D8A448A00BF1F9B /* KeyboardMan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardMan.swift; sourceTree = "<group>"; };
+		B5EFB8791D8A44A000BF1F9B /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
+		B5EFB87B1D8A44B700BF1F9B /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		B5EFB87F1D8A451500BF1F9B /* UIButton+Smart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Smart.swift"; sourceTree = "<group>"; };
+		B5EFB8801D8A451500BF1F9B /* UITableView+Smart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Smart.swift"; sourceTree = "<group>"; };
+		B5EFB8811D8A451500BF1F9B /* String+Smart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Smart.swift"; sourceTree = "<group>"; };
+		B5EFB8821D8A451500BF1F9B /* UIColor+Smart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Smart.swift"; sourceTree = "<group>"; };
+		B5EFB8831D8A451500BF1F9B /* UIView+Smart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Smart.swift"; sourceTree = "<group>"; };
+		B5EFB8891D8A476B00BF1F9B /* SmartTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartTask.swift; sourceTree = "<group>"; };
 		B74E746882D538C4C4F301CE /* Pods-MemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemoUITests/Pods-MemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE58B5699B223BFB8DDCFC08 /* Pods-Memo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Memo/Pods-Memo.release.xcconfig"; sourceTree = "<group>"; };
 		D3A0FECFF33F493138E8451B /* Pods-MemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemoTests/Pods-MemoTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -177,7 +233,10 @@
 		B50F93A51D8A39FA00742FA0 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				B50F93AA1D8A3A6C00742FA0 /* BaseViewController.swift */,
+				B5EFB8401D8A41BC00BF1F9B /* Extension */,
+				B5EFB8391D8A415900BF1F9B /* Bases */,
+				B5EFB83B1D8A415900BF1F9B /* Configs */,
+				B5EFB83C1D8A415900BF1F9B /* Helpers */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -195,6 +254,63 @@
 				B50F93A81D8A3A1500742FA0 /* AppDelegate.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		B5EFB8391D8A415900BF1F9B /* Bases */ = {
+			isa = PBXGroup;
+			children = (
+				B5EFB83A1D8A415900BF1F9B /* BaseViewController.swift */,
+			);
+			path = Bases;
+			sourceTree = "<group>";
+		};
+		B5EFB83B1D8A415900BF1F9B /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
+		B5EFB83C1D8A415900BF1F9B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B5EFB83E1D8A416A00BF1F9B /* AttributeStringMaker.swift */,
+				B5EFB8771D8A448A00BF1F9B /* KeyboardMan.swift */,
+				B5EFB8791D8A44A000BF1F9B /* Async.swift */,
+				B5EFB87B1D8A44B700BF1F9B /* Reachability.swift */,
+				B5EFB8891D8A476B00BF1F9B /* SmartTask.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B5EFB8401D8A41BC00BF1F9B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B5EFB87F1D8A451500BF1F9B /* UIButton+Smart.swift */,
+				B5EFB8801D8A451500BF1F9B /* UITableView+Smart.swift */,
+				B5EFB8811D8A451500BF1F9B /* String+Smart.swift */,
+				B5EFB8821D8A451500BF1F9B /* UIColor+Smart.swift */,
+				B5EFB8831D8A451500BF1F9B /* UIView+Smart.swift */,
+				B5EFB8411D8A41BC00BF1F9B /* Array+Stec.swift */,
+				B5EFB8421D8A41BC00BF1F9B /* CALayer+Stec.swift */,
+				B5EFB8431D8A41BC00BF1F9B /* CGFloat+Stec.swift */,
+				B5EFB8441D8A41BC00BF1F9B /* Int64+Stec.swift */,
+				B5EFB8471D8A41BC00BF1F9B /* NSDate+Stec.swift */,
+				B5EFB8481D8A41BC00BF1F9B /* NSObject+Stec.swift */,
+				B5EFB84A1D8A41BC00BF1F9B /* String+FileExtension.swift */,
+				B5EFB84B1D8A41BC00BF1F9B /* String+Stec.swift */,
+				B5EFB84C1D8A41BC00BF1F9B /* String+Value.swift */,
+				B5EFB84E1D8A41BC00BF1F9B /* UICollectionView+Stec.swift */,
+				B5EFB8511D8A41BC00BF1F9B /* UIImage+Stec.swift */,
+				B5EFB8521D8A41BC00BF1F9B /* UIImageView+Stec.swift */,
+				B5EFB8531D8A41BC00BF1F9B /* UILabel+Stec.swift */,
+				B5EFB8541D8A41BC00BF1F9B /* UINavigationBar+Stec.swift */,
+				B5EFB8551D8A41BC00BF1F9B /* UIScrollView+Stec.swift */,
+				B5EFB8561D8A41BC00BF1F9B /* UITabBar+Stec.swift */,
+				B5EFB8581D8A41BC00BF1F9B /* UIView+Stec.swift */,
+				B5EFB8591D8A41BC00BF1F9B /* UIViewcontroller+Stec.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -458,9 +574,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5EFB8621D8A41BC00BF1F9B /* NSObject+Stec.swift in Sources */,
+				B5EFB8851D8A451500BF1F9B /* UITableView+Smart.swift in Sources */,
+				B5EFB8781D8A448A00BF1F9B /* KeyboardMan.swift in Sources */,
+				B5EFB8881D8A451500BF1F9B /* UIView+Smart.swift in Sources */,
+				B5EFB85D1D8A41BC00BF1F9B /* CGFloat+Stec.swift in Sources */,
+				B5EFB86E1D8A41BC00BF1F9B /* UINavigationBar+Stec.swift in Sources */,
+				B5EFB8721D8A41BC00BF1F9B /* UIView+Stec.swift in Sources */,
+				B5EFB86F1D8A41BC00BF1F9B /* UIScrollView+Stec.swift in Sources */,
+				B5EFB8701D8A41BC00BF1F9B /* UITabBar+Stec.swift in Sources */,
+				B5EFB8841D8A451500BF1F9B /* UIButton+Smart.swift in Sources */,
+				B5EFB83F1D8A416A00BF1F9B /* AttributeStringMaker.swift in Sources */,
+				B5EFB8861D8A451500BF1F9B /* String+Smart.swift in Sources */,
+				B5EFB87A1D8A44A000BF1F9B /* Async.swift in Sources */,
+				B5EFB85E1D8A41BC00BF1F9B /* Int64+Stec.swift in Sources */,
+				B5EFB86D1D8A41BC00BF1F9B /* UILabel+Stec.swift in Sources */,
+				B5EFB87C1D8A44B700BF1F9B /* Reachability.swift in Sources */,
+				B5EFB8651D8A41BC00BF1F9B /* String+Stec.swift in Sources */,
+				B5EFB8871D8A451500BF1F9B /* UIColor+Smart.swift in Sources */,
 				B50F93A91D8A3A1500742FA0 /* AppDelegate.swift in Sources */,
+				B5EFB86C1D8A41BC00BF1F9B /* UIImageView+Stec.swift in Sources */,
+				B5EFB8731D8A41BC00BF1F9B /* UIViewcontroller+Stec.swift in Sources */,
+				B5EFB86B1D8A41BC00BF1F9B /* UIImage+Stec.swift in Sources */,
+				B5EFB8611D8A41BC00BF1F9B /* NSDate+Stec.swift in Sources */,
 				B50F93791D8A396800742FA0 /* ViewController.swift in Sources */,
-				B50F93AB1D8A3A6C00742FA0 /* BaseViewController.swift in Sources */,
+				B5EFB85B1D8A41BC00BF1F9B /* Array+Stec.swift in Sources */,
+				B5EFB8661D8A41BC00BF1F9B /* String+Value.swift in Sources */,
+				B5EFB85C1D8A41BC00BF1F9B /* CALayer+Stec.swift in Sources */,
+				B5EFB8641D8A41BC00BF1F9B /* String+FileExtension.swift in Sources */,
+				B5EFB83D1D8A415900BF1F9B /* BaseViewController.swift in Sources */,
+				B5EFB8681D8A41BC00BF1F9B /* UICollectionView+Stec.swift in Sources */,
+				B5EFB88A1D8A476B00BF1F9B /* SmartTask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
