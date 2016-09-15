@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7777461B26ED3C5D2D5C52BA /* Pods_MemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39915125B65413618B61882B /* Pods_MemoTests.framework */; };
-		B50F93791D8A396800742FA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F93781D8A396800742FA0 /* ViewController.swift */; };
 		B50F937E1D8A396800742FA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B50F937D1D8A396800742FA0 /* Assets.xcassets */; };
 		B50F93811D8A396800742FA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B50F937F1D8A396800742FA0 /* LaunchScreen.storyboard */; };
 		B50F938C1D8A396800742FA0 /* MemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F938B1D8A396800742FA0 /* MemoTests.swift */; };
@@ -47,6 +46,9 @@
 		B5EFB8901D8A486C00BF1F9B /* GroupListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB88D1D8A486C00BF1F9B /* GroupListViewController.swift */; };
 		B5EFB8911D8A486C00BF1F9B /* KnowlageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB88E1D8A486C00BF1F9B /* KnowlageDetailViewController.swift */; };
 		B5EFB8921D8A486C00BF1F9B /* KnowlageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB88F1D8A486C00BF1F9B /* KnowlageListViewController.swift */; };
+		B5EFB8941D8A491300BF1F9B /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8931D8A491300BF1F9B /* BaseNavigationController.swift */; };
+		B5EFB89E1D8A4C1100BF1F9B /* BasicCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8981D8A4C1100BF1F9B /* BasicCollectionCell.swift */; };
+		B5EFB8A81D8A702800BF1F9B /* CustomTableCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8A71D8A702800BF1F9B /* CustomTableCells.swift */; };
 		BCF5D46E49EF5064B5BB7B0E /* Pods_MemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D82D01147CB0E643682B95E /* Pods_MemoUITests.framework */; };
 		EBDB08065E5B9BE5278793A2 /* Pods_Memo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F544942F459AF57E3F3823D1 /* Pods_Memo.framework */; };
 /* End PBXBuildFile section */
@@ -73,7 +75,6 @@
 		6765DC0948BF38A212F5FCCC /* Pods-MemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemoTests/Pods-MemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		6D82D01147CB0E643682B95E /* Pods_MemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50F93731D8A396800742FA0 /* Memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B50F93781D8A396800742FA0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B50F937D1D8A396800742FA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B50F93801D8A396800742FA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B50F93821D8A396800742FA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,6 +118,9 @@
 		B5EFB88D1D8A486C00BF1F9B /* GroupListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupListViewController.swift; sourceTree = "<group>"; };
 		B5EFB88E1D8A486C00BF1F9B /* KnowlageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnowlageDetailViewController.swift; sourceTree = "<group>"; };
 		B5EFB88F1D8A486C00BF1F9B /* KnowlageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnowlageListViewController.swift; sourceTree = "<group>"; };
+		B5EFB8931D8A491300BF1F9B /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		B5EFB8981D8A4C1100BF1F9B /* BasicCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicCollectionCell.swift; sourceTree = "<group>"; };
+		B5EFB8A71D8A702800BF1F9B /* CustomTableCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableCells.swift; sourceTree = "<group>"; };
 		B74E746882D538C4C4F301CE /* Pods-MemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemoUITests/Pods-MemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE58B5699B223BFB8DDCFC08 /* Pods-Memo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Memo/Pods-Memo.release.xcconfig"; sourceTree = "<group>"; };
 		D3A0FECFF33F493138E8451B /* Pods-MemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemoTests/Pods-MemoTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -205,10 +209,7 @@
 				B50F93A51D8A39FA00742FA0 /* Common */,
 				B50F93A61D8A39FA00742FA0 /* Configs */,
 				B50F93A71D8A39FA00742FA0 /* Main */,
-				B50F93781D8A396800742FA0 /* ViewController.swift */,
-				B50F937D1D8A396800742FA0 /* Assets.xcassets */,
-				B50F937F1D8A396800742FA0 /* LaunchScreen.storyboard */,
-				B50F93821D8A396800742FA0 /* Info.plist */,
+				B5EFB8951D8A4B6C00BF1F9B /* Resource */,
 			);
 			path = Memo;
 			sourceTree = "<group>";
@@ -234,6 +235,7 @@
 		B50F93A41D8A39FA00742FA0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B5EFB8A61D8A701300BF1F9B /* Views */,
 				B5EFB88D1D8A486C00BF1F9B /* GroupListViewController.swift */,
 				B5EFB88E1D8A486C00BF1F9B /* KnowlageDetailViewController.swift */,
 				B5EFB88F1D8A486C00BF1F9B /* KnowlageListViewController.swift */,
@@ -244,8 +246,9 @@
 		B50F93A51D8A39FA00742FA0 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				B5EFB8401D8A41BC00BF1F9B /* Extension */,
 				B5EFB8391D8A415900BF1F9B /* Bases */,
+				B5EFB8961D8A4BE800BF1F9B /* Views */,
+				B5EFB8401D8A41BC00BF1F9B /* Extension */,
 				B5EFB83B1D8A415900BF1F9B /* Configs */,
 				B5EFB83C1D8A415900BF1F9B /* Helpers */,
 			);
@@ -271,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				B5EFB83A1D8A415900BF1F9B /* BaseViewController.swift */,
+				B5EFB8931D8A491300BF1F9B /* BaseNavigationController.swift */,
 			);
 			path = Bases;
 			sourceTree = "<group>";
@@ -323,6 +327,40 @@
 				B5EFB8591D8A41BC00BF1F9B /* UIViewcontroller+Stec.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		B5EFB8951D8A4B6C00BF1F9B /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				B50F937D1D8A396800742FA0 /* Assets.xcassets */,
+				B50F937F1D8A396800742FA0 /* LaunchScreen.storyboard */,
+				B50F93821D8A396800742FA0 /* Info.plist */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		B5EFB8961D8A4BE800BF1F9B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B5EFB8971D8A4C1100BF1F9B /* CustomCells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B5EFB8971D8A4C1100BF1F9B /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				B5EFB8981D8A4C1100BF1F9B /* BasicCollectionCell.swift */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		B5EFB8A61D8A701300BF1F9B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B5EFB8A71D8A702800BF1F9B /* CustomTableCells.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -599,6 +637,7 @@
 				B5EFB8841D8A451500BF1F9B /* UIButton+Smart.swift in Sources */,
 				B5EFB83F1D8A416A00BF1F9B /* AttributeStringMaker.swift in Sources */,
 				B5EFB8921D8A486C00BF1F9B /* KnowlageListViewController.swift in Sources */,
+				B5EFB8A81D8A702800BF1F9B /* CustomTableCells.swift in Sources */,
 				B5EFB8861D8A451500BF1F9B /* String+Smart.swift in Sources */,
 				B5EFB8911D8A486C00BF1F9B /* KnowlageDetailViewController.swift in Sources */,
 				B5EFB87A1D8A44A000BF1F9B /* Async.swift in Sources */,
@@ -612,12 +651,13 @@
 				B5EFB86C1D8A41BC00BF1F9B /* UIImageView+Stec.swift in Sources */,
 				B5EFB8731D8A41BC00BF1F9B /* UIViewcontroller+Stec.swift in Sources */,
 				B5EFB86B1D8A41BC00BF1F9B /* UIImage+Stec.swift in Sources */,
+				B5EFB89E1D8A4C1100BF1F9B /* BasicCollectionCell.swift in Sources */,
 				B5EFB8611D8A41BC00BF1F9B /* NSDate+Stec.swift in Sources */,
-				B50F93791D8A396800742FA0 /* ViewController.swift in Sources */,
 				B5EFB85B1D8A41BC00BF1F9B /* Array+Stec.swift in Sources */,
 				B5EFB8661D8A41BC00BF1F9B /* String+Value.swift in Sources */,
 				B5EFB85C1D8A41BC00BF1F9B /* CALayer+Stec.swift in Sources */,
 				B5EFB8641D8A41BC00BF1F9B /* String+FileExtension.swift in Sources */,
+				B5EFB8941D8A491300BF1F9B /* BaseNavigationController.swift in Sources */,
 				B5EFB83D1D8A415900BF1F9B /* BaseViewController.swift in Sources */,
 				B5EFB8681D8A41BC00BF1F9B /* UICollectionView+Stec.swift in Sources */,
 				B5EFB88A1D8A476B00BF1F9B /* SmartTask.swift in Sources */,

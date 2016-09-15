@@ -1,5 +1,5 @@
 //
-//  KnowlageDetailViewController.swift
+//  KnowledgeDetailViewController.swift
 //  Starry
 //
 //  Created by XuAzen on 16/9/8.
@@ -8,28 +8,22 @@
 
 import UIKit
 
-class KnowlageDetailViewController: BaseViewController {
+private struct StyleSheet {
+    static let cellID = "Cell"
+}
 
+class KnowledgeDetailViewController: BaseViewController {
+    
+}
+
+extension KnowledgeDetailViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        setupViews()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func setupViews() {
+        title = "知识详情页"
+        view.backgroundColor = UIColor.stec_randomColor()
     }
-    */
-
 }

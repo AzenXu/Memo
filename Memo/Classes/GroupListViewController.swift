@@ -25,25 +25,26 @@ class GroupListViewController: BaseViewController {
 extension GroupListViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: StyleSheet.cellID)
+        _setupViews()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    private func _setupViews() {
+        view.backgroundColor = UIColor.stec_randomColor()
+        title = "分组列表页"
+        tableView.then { (table) in
+            view.addSubview(table)
+            table.delegate = self
+            table.dataSource = self
+            table.snp_remakeConstraints(closure: { (make) in
+                make.left.equalTo(0)
+                make.right.equalTo(0)
+                make.top.equalTo(0)
+                make.bottom.equalTo(0)
+            })
+            
+            table.registerClass(UITableViewCell.self, forCellReuseIdentifier: StyleSheet.cellID)
+        }
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
 }
 
 extension GroupListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -55,10 +56,21 @@ extension GroupListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(StyleSheet.cellID)!
-        cell.backgroundColor = UIColor.init(white: CGFloat(indexPath.row) / CGFloat(datas.count), alpha: 1)
+        cell.backgroundColor = UIColor.stec_randomColor()
         return cell
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 100
+    }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        _jumpToKnowledgeList()
+    }
+}
+
+// MARK: - private funcs
+extension GroupListViewController {
+    private func _jumpToKnowledgeList() {
+        let knowledgeListVC = KnowledgeListViewController()
+        navigationController?.pushViewController(knowledgeListVC, animated: true)
     }
 }
