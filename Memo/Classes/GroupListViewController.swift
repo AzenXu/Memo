@@ -35,6 +35,7 @@ extension GroupListViewController {
             view.addSubview(table)
             table.delegate = self
             table.dataSource = self
+            table.separatorStyle = UITableViewCellSeparatorStyle.None
             table.snp_remakeConstraints(closure: { (make) in
                 make.left.equalTo(0)
                 make.right.equalTo(0)
