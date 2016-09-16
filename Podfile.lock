@@ -8,7 +8,7 @@ PODS:
   - Then (1.0.3)
 
 DEPENDENCIES:
-  - RealmSwift
+  - RealmSwift (= 1.0.2)
   - SnapKit
   - Then
 
@@ -18,6 +18,6 @@ SPEC CHECKSUMS:
   SnapKit: 0dd2fd157330f1ea11fd84da13e6be8a7a22bae0
   Then: c2502b763132c80dfa64d325065d70c45e2d48ca
 
-PODFILE CHECKSUM: 268e64a6d1c54ccc33b48080049b607c30d9aeb7
+PODFILE CHECKSUM: fd98378665fcc20fcf3aa2975219e04482b85bb9
 
 COCOAPODS: 1.0.1

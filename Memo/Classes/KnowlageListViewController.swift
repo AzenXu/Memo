@@ -135,4 +135,8 @@ extension KnowledgeListViewController {
         let detailVC = KnowledgeDetailViewController()
         navigationController?.pushViewController(detailVC, animated: true)
     }
+    
+    private func _saveKnowledge() {
+        
+    }
 }

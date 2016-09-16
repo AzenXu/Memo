@@ -8,16 +8,5 @@ target 'Memo' do
   # Pods for Memo
   pod 'SnapKit'
   pod 'Then'
-  pod 'RealmSwift'
-  
-  target 'MemoTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'MemoUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
+  pod 'RealmSwift', '1.0.2'
 end
