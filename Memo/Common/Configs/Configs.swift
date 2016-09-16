@@ -7,4 +7,18 @@
 //
 
 import Foundation
-import UIKit
+
+public struct MemoConfig {
+    
+    public struct Settings {
+        public static var netEnvType: NetEnvModel {
+            return .Develop
+        }
+    }
+    
+    public enum NetEnvModel {
+        case Develop
+        case Online
+    }
+    
+}

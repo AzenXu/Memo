@@ -7,13 +7,19 @@
 //
 
 import UIKit
+import RealmSwift
 
 class KnowledgeListViewController: BaseViewController {
     
     //  basic data
-    var datas = ["","",""]
-    var oldKnowledge = ["","","","","","","","","","","","","","","","","","",""]
+    var newKnowledges: Results<Knowledge>?
+    var oldKnowledges: Results<Knowledge>?
+    
     var showOldKnowledge = false
+    let realm = Bootstrap.cachedDataRealm
+    
+    var newToken: NotificationToken?
+    var oldToken: NotificationToken?
     
     //  basic UI
     lazy var backgroundView: UIImageView = {return UIImageView()}()
@@ -34,6 +40,7 @@ extension KnowledgeListViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         _setupViews()
+        _setupDatas()
     }
     
     private func _setupViews() {
@@ -82,10 +89,12 @@ extension KnowledgeListViewController: UITableViewDelegate, UITableViewDataSourc
         guard let style = ListStyle(rawValue: section) else { return 0 }
         switch style {
         case .AddKnowledge:
-            return datas.count
+            guard let newKnowledges = newKnowledges else { return 0 }
+            return newKnowledges.count
         case .ShowOldKnowledge:
             if showOldKnowledge {
-                return oldKnowledge.count
+                guard let oldKnowledges = oldKnowledges else { return 0 }
+                return oldKnowledges.count
             } else {
                 return 0
             }
@@ -93,6 +102,26 @@ extension KnowledgeListViewController: UITableViewDelegate, UITableViewDataSourc
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = KnowledgeListCardCell.dequeueMe(tableView, indexPath: indexPath) as! KnowledgeListCardCell
+        
+        guard let style = ListStyle(rawValue: indexPath.section) else { return cell }
+        switch style {
+        case .AddKnowledge:
+            let newKnowledge = newKnowledges?[indexPath.row]
+            cell.config(newKnowledge)
+            cell.checkButtonClick = { [weak self] isSelected in
+                guard let `self` = self, newKnowledge = newKnowledge else {return}
+                let addNumber = isSelected ? 1 : -1
+                self._updateKnowledge(withTitle: newKnowledge.title, mCount: newKnowledge.memoryCount + addNumber)
+            }
+        case .ShowOldKnowledge:
+            let oldKnowledge = oldKnowledges?[indexPath.row]
+            cell.config(oldKnowledge)
+            cell.checkButtonClick = { [weak self] isSelected in
+                guard let `self` = self, oldKnowledge = oldKnowledge else {return}
+                let addNumber = isSelected ? 1 : -1
+                self._updateKnowledge(withTitle: oldKnowledge.title, mCount: oldKnowledge.memoryCount + addNumber)
+            }
+        }
         cell.clickCallBack = { [weak self] in
             guard let `self` = self else {return}
             self._jumpToKnowledgeDetail()
@@ -104,6 +133,11 @@ extension KnowledgeListViewController: UITableViewDelegate, UITableViewDataSourc
         switch style {
         case .AddKnowledge:
             let header = AddKnowledgeHeader()
+            header.writeCompleteCallBack = { [weak self] content in
+                guard let `self` = self, content = content else { return }
+                self._updateKnowledge(content, desc: nil)
+                print(content)
+            }
             return header
         case .ShowOldKnowledge:
             let header = ShowOldKnowledgeHeader()
@@ -136,7 +170,77 @@ extension KnowledgeListViewController {
         navigationController?.pushViewController(detailVC, animated: true)
     }
     
-    private func _saveKnowledge() {
+    private func _setupDatas() {
+        newKnowledges = _loadKnowledgesFromDB(true)
+        oldKnowledges = _loadKnowledgesFromDB(false)
         
+        newToken = newKnowledges?.addNotificationBlock({ [weak self] (changes: RealmCollectionChange) in
+            guard let `self` = self else { return }
+            self._reloadDataFromDBNofity(changes, forStyle: KnowledgeListViewController.ListStyle.AddKnowledge)
+        })
+        oldToken = oldKnowledges?.addNotificationBlock({ [weak self] (changes: RealmCollectionChange) in
+            guard let `self` = self else { return }
+            self._reloadDataFromDBNofity(changes, forStyle: KnowledgeListViewController.ListStyle.ShowOldKnowledge)
+        })
+    }
+}
+
+// MARK: - private for DB
+extension KnowledgeListViewController {
+    private func _updateKnowledge(title: String, desc: String?) {
+        let know = Knowledge()
+        know.title = title
+        know.desc = desc ?? ""
+        know.updateTime = NSDate().timeIntervalSince1970
+        try! realm?.write({
+            realm?.add(know, update: true)
+        })
+    }
+    
+    private func _updateKnowledge(withTitle title: String, mCount: Int) {
+        try! realm?.write({ 
+            realm?.create(Knowledge.self, value: ["title":title, "memoryCount":mCount, "updateTime":NSDate().timeIntervalSince1970], update: true)
+        })
+    }
+    
+    private func _loadKnowledgesFromDB(isNew: Bool?) -> Results<Knowledge>? {
+        func getPredicate(isNew: Bool) -> NSPredicate {
+            if isNew {
+                return NSPredicate(format: "memoryCount = %d", argumentArray: [0])
+            } else {
+                return NSPredicate(format: "memoryCount > %d", argumentArray: [0])
+            }
+        }
+        var knows = realm?.objects(Knowledge.self).sorted("updateTime", ascending: false)
+        if isNew != nil && knows != nil {
+            knows = knows!.filter(getPredicate(isNew!))
+        }
+        return knows
+    }
+    
+    private func _reloadDataFromDBNofity(changes: RealmCollectionChange<Results<Knowledge>>, forStyle: ListStyle) {
+        switch changes {
+        case .Initial:
+            // Results 现在已经填充完毕，可以不需要阻塞 UI 就可以被访问
+            self.tableView.reloadSections(NSIndexSet.init(index: ListStyle.AddKnowledge.rawValue), withRowAnimation: UITableViewRowAnimation.None)
+            break
+        case .Update(_, let deletions, let insertions, let modifications):
+            // 检索结果被改变，因此将它们应用到 UITableView 当中
+            if forStyle == ListStyle.ShowOldKnowledge && showOldKnowledge == false { return }
+            self.tableView.beginUpdates()
+            self.tableView.insertRowsAtIndexPaths(insertions.map { NSIndexPath(forRow: $0, inSection: forStyle.rawValue) },
+                                                  withRowAnimation: .Automatic)
+            self.tableView.deleteRowsAtIndexPaths(deletions.map { NSIndexPath(forRow: $0, inSection: forStyle.rawValue) },
+                                                  withRowAnimation: .Automatic)
+            self.tableView.reloadRowsAtIndexPaths(modifications.map { NSIndexPath(forRow: $0, inSection: forStyle.rawValue) },
+                                                  withRowAnimation: .Automatic)
+            self.tableView.endUpdates()
+
+            break
+        case .Error(let error):
+            // 如果在后台工作线程中打开 Realm 文件的时候，就会发生错误
+            fatalError("\(error)")
+            break
+        }
     }
 }

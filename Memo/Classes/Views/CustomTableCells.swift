@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import RxCocoa
+import RxSwift
 
 /// cells
 class KnowledgeListCardCell: BasicTableCell {
@@ -15,6 +17,8 @@ class KnowledgeListCardCell: BasicTableCell {
     lazy var boxArea: UIView = {return UIView()}()
     lazy var checkButton: CustomColorButton = {return CustomColorButton()}()
     lazy var titleLabel: UILabel = {return UILabel()}()
+    
+    var checkButtonClick: ((isSelected: Bool)->())?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -43,9 +47,11 @@ class KnowledgeListCardCell: BasicTableCell {
                         make.size.equalTo(16)
                     })
                     $0.setImage(UIImage(named: "knowledge_list_checkBox_uncheck"), forState: UIControlState.Normal)
-                    $0.setImage(UIImage(named: "knowledge_list_checkBox_checked"), forState: UIControlState.Highlighted)
-                    $0.clickCallBack = { button in
-                        print("点我了 --- \(button.state)")
+                    $0.setImage(UIImage(named: "knowledge_list_checkBox_checked"), forState: UIControlState.Selected)
+                    $0.clickCallBack = { [weak self] button in
+                        guard let `self` = self else {return}
+                        button.selected = !button.selected
+                        self.checkButtonClick?(isSelected: button.selected)
                     }
                 })
                 
@@ -72,11 +78,21 @@ class KnowledgeListCardCell: BasicTableCell {
     
 }
 
+extension KnowledgeListCardCell {
+    func config(info: Knowledge?) {
+        guard let info = info else { return }
+        titleLabel.text = info.title
+        checkButton.selected = info.memoryCount > 0
+    }
+}
+
 /// supplements
 class AddKnowledgeHeader: UIView {
     lazy var boxArea: UIView = {return UIView()}()
     lazy var addImage: UILabel = {return UILabel()}()
     lazy var textField: UITextField = {return UITextField()}()
+    
+    var writeCompleteCallBack: ((string: String?)->())?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -118,6 +134,7 @@ class AddKnowledgeHeader: UIView {
                         make.top.equalTo(0)
                         make.bottom.equalTo(0)
                     })
+                    $0.delegate = self
                 })
             }
         }
@@ -127,6 +144,27 @@ class AddKnowledgeHeader: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension AddKnowledgeHeader: UITextFieldDelegate {
+    func textFieldDidEndEditing(textField: UITextField) {
+        guard let text = textField.text where text.trimmed() != "" else {
+            textField.text = nil
+            return
+        }
+        writeCompleteCallBack?(string: text)
+        textField.text = nil
+    }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.endEditing(true)
+        return true
+    }
+    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
+        return true
+    }
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        return true
     }
 }
 

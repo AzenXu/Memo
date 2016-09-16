@@ -13,6 +13,7 @@
 		B50F938C1D8A396800742FA0 /* MemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F938B1D8A396800742FA0 /* MemoTests.swift */; };
 		B50F93971D8A396800742FA0 /* MemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F93961D8A396800742FA0 /* MemoUITests.swift */; };
 		B50F93A91D8A3A1500742FA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F93A81D8A3A1500742FA0 /* AppDelegate.swift */; };
+		B5D70EFF1D8BD46B00EEE0F9 /* Bootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D70EFE1D8BD46B00EEE0F9 /* Bootstrap.swift */; };
 		B5EFB83D1D8A415900BF1F9B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB83A1D8A415900BF1F9B /* BaseViewController.swift */; };
 		B5EFB83F1D8A416A00BF1F9B /* AttributeStringMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB83E1D8A416A00BF1F9B /* AttributeStringMaker.swift */; };
 		B5EFB85B1D8A41BC00BF1F9B /* Array+Stec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8411D8A41BC00BF1F9B /* Array+Stec.swift */; };
@@ -50,7 +51,7 @@
 		B5EFB89E1D8A4C1100BF1F9B /* BasicCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8981D8A4C1100BF1F9B /* BasicCollectionCell.swift */; };
 		B5EFB8A81D8A702800BF1F9B /* CustomTableCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8A71D8A702800BF1F9B /* CustomTableCells.swift */; };
 		B5EFB8AC1D8A7AC100BF1F9B /* SimpleCustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8AB1D8A7AC100BF1F9B /* SimpleCustomViews.swift */; };
-		B5EFB8AF1D8AEDBE00BF1F9B /* Knowledge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8AE1D8AEDBE00BF1F9B /* Knowledge.swift */; };
+		B5EFB8AF1D8AEDBE00BF1F9B /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8AE1D8AEDBE00BF1F9B /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		B50F93961D8A396800742FA0 /* MemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoUITests.swift; sourceTree = "<group>"; };
 		B50F93981D8A396800742FA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B50F93A81D8A3A1500742FA0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B5D70EFE1D8BD46B00EEE0F9 /* Bootstrap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bootstrap.swift; sourceTree = "<group>"; };
 		B5EFB83A1D8A415900BF1F9B /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B5EFB83E1D8A416A00BF1F9B /* AttributeStringMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeStringMaker.swift; sourceTree = "<group>"; };
 		B5EFB8411D8A41BC00BF1F9B /* Array+Stec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Stec.swift"; sourceTree = "<group>"; };
@@ -120,7 +122,7 @@
 		B5EFB8981D8A4C1100BF1F9B /* BasicCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicCollectionCell.swift; sourceTree = "<group>"; };
 		B5EFB8A71D8A702800BF1F9B /* CustomTableCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableCells.swift; sourceTree = "<group>"; };
 		B5EFB8AB1D8A7AC100BF1F9B /* SimpleCustomViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCustomViews.swift; sourceTree = "<group>"; };
-		B5EFB8AE1D8AEDBE00BF1F9B /* Knowledge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Knowledge.swift; sourceTree = "<group>"; };
+		B5EFB8AE1D8AEDBE00BF1F9B /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		CE6A30358246874CC89A73AB /* Pods_Memo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Memo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF8135BA05317515BEDB91D0 /* Pods-Memo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Memo/Pods-Memo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -195,7 +197,6 @@
 			children = (
 				B50F93A41D8A39FA00742FA0 /* Classes */,
 				B50F93A51D8A39FA00742FA0 /* Common */,
-				B50F93A61D8A39FA00742FA0 /* Configs */,
 				B50F93A71D8A39FA00742FA0 /* Main */,
 				B5EFB8951D8A4B6C00BF1F9B /* Resource */,
 			);
@@ -244,13 +245,6 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		B50F93A61D8A39FA00742FA0 /* Configs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Configs;
-			sourceTree = "<group>";
-		};
 		B50F93A71D8A39FA00742FA0 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				B5EFB88B1D8A480600BF1F9B /* Configs.swift */,
+				B5D70EFE1D8BD46B00EEE0F9 /* Bootstrap.swift */,
 			);
 			path = Configs;
 			sourceTree = "<group>";
@@ -356,7 +351,7 @@
 		B5EFB8AD1D8AEDAC00BF1F9B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B5EFB8AE1D8AEDBE00BF1F9B /* Knowledge.swift */,
+				B5EFB8AE1D8AEDBE00BF1F9B /* Models.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -631,7 +626,7 @@
 				B5EFB86E1D8A41BC00BF1F9B /* UINavigationBar+Stec.swift in Sources */,
 				B5EFB8721D8A41BC00BF1F9B /* UIView+Stec.swift in Sources */,
 				B5EFB86F1D8A41BC00BF1F9B /* UIScrollView+Stec.swift in Sources */,
-				B5EFB8AF1D8AEDBE00BF1F9B /* Knowledge.swift in Sources */,
+				B5EFB8AF1D8AEDBE00BF1F9B /* Models.swift in Sources */,
 				B5EFB8701D8A41BC00BF1F9B /* UITabBar+Stec.swift in Sources */,
 				B5EFB8841D8A451500BF1F9B /* UIButton+Smart.swift in Sources */,
 				B5EFB83F1D8A416A00BF1F9B /* AttributeStringMaker.swift in Sources */,
@@ -646,6 +641,7 @@
 				B5EFB8651D8A41BC00BF1F9B /* String+Stec.swift in Sources */,
 				B5EFB88C1D8A480600BF1F9B /* Configs.swift in Sources */,
 				B5EFB8871D8A451500BF1F9B /* UIColor+Smart.swift in Sources */,
+				B5D70EFF1D8BD46B00EEE0F9 /* Bootstrap.swift in Sources */,
 				B50F93A91D8A3A1500742FA0 /* AppDelegate.swift in Sources */,
 				B5EFB86C1D8A41BC00BF1F9B /* UIImageView+Stec.swift in Sources */,
 				B5EFB8AC1D8A7AC100BF1F9B /* SimpleCustomViews.swift in Sources */,

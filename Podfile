@@ -9,4 +9,5 @@ target 'Memo' do
   pod 'SnapKit'
   pod 'Then'
   pod 'RealmSwift', '1.0.2'
+  pod 'RxCocoa', '~> 2.6.0'
 end
