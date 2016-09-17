@@ -19,7 +19,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>1.0.0</string>
 	<key>CodePushDeploymentKey</key>
 	<string>zb-s78MIprCBBd2xlTk8vpD5KZQeEkEjOlLhZ</string>
 	<key>LSRequiresIPhoneOS</key>

@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var rootViewControllerForRN: RNViewController?
     var rootViewControllerForNative: UIViewController?
+    var isRootNaviteShowing: Bool = false
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -56,8 +57,11 @@ extension AppDelegate {
         if rn {
             window?.rootViewController = rootViewControllerForRN
         } else {
-            rootViewControllerForNative?.modalTransitionStyle = .CrossDissolve
-            window?.rootViewController?.presentViewController(rootViewControllerForNative!, animated: true, completion: nil)
+            if isRootNaviteShowing == false {
+                rootViewControllerForNative?.modalTransitionStyle = .CrossDissolve
+                window?.rootViewController?.presentViewController(rootViewControllerForNative!, animated: true, completion: nil)
+                isRootNaviteShowing = true                
+            }
         }
         window?.makeKeyAndVisible()
     }
