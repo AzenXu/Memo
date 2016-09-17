@@ -1514,7 +1514,7 @@ _reactNativeCodePush2.default.sync();
 },
 render:function render(){var _this=this;
 this.setTimeout(
-function(){_this._setupMainView();},500);
+function(){_this._setupMainView();},1);
 
 return(
 _react2.default.createElement(_reactNative.View,{style:styles.container},
@@ -1532,7 +1532,7 @@ RNInterface.sendMessage('{\"msgType":\"callKnowledgeList\"}');
 var styles=_reactNative.StyleSheet.create({
 container:{
 flex:1,
-backgroundColor:'white',
+backgroundColor:'rgb(168,143,107)',
 justifyContent:'center',
 alignItems:'center'}});
 

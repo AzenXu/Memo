@@ -28,7 +28,7 @@ let HelloRN = React.createClass({
   },
   render() {
     this.setTimeout(
-      () => { this._setupMainView(); }, 500
+      () => { this._setupMainView(); }, 1
     );
     return (
       <View style = {styles.container}>
@@ -46,7 +46,7 @@ let HelloRN = React.createClass({
 const styles = StyleSheet.create({
   container:{
     flex:1,
-    backgroundColor:'white',
+    backgroundColor:'rgb(168,143,107)',
     justifyContent:'center',
     alignItems:'center'
   }
