@@ -20,6 +20,7 @@ class KnowledgeListViewController: BaseViewController {
     
     var newToken: NotificationToken?
     var oldToken: NotificationToken?
+    var reloadControl = StyleReloadControl()
     
     //  basic UI
     lazy var backgroundView: UIImageView = {return UIImageView()}()
@@ -29,6 +30,11 @@ class KnowledgeListViewController: BaseViewController {
         case AddKnowledge, ShowOldKnowledge
         
         static let count = 2
+    }
+    
+    struct StyleReloadControl {
+        var addKnowledgeAction: (()->())?
+        var showOldKnowledgeAction: (()->())?
     }
     
     deinit {
@@ -122,10 +128,10 @@ extension KnowledgeListViewController: UITableViewDelegate, UITableViewDataSourc
                 self._updateKnowledge(withTitle: oldKnowledge.title, mCount: oldKnowledge.memoryCount + addNumber)
             }
         }
-        cell.clickCallBack = { [weak self] in
-            guard let `self` = self else {return}
-            self._jumpToKnowledgeDetail()
-        }
+//        cell.clickCallBack = { [weak self] in
+//            guard let `self` = self else {return}
+//            self._jumpToKnowledgeDetail()
+//        }
         return cell
     }
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -159,7 +165,24 @@ extension KnowledgeListViewController: UITableViewDelegate, UITableViewDataSourc
         case .ShowOldKnowledge:
             return 60
         }
-
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String? {
+        return "删除"
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        guard let style = ListStyle(rawValue: indexPath.section) else { return }
+        switch style {
+        case .AddKnowledge:
+            _removeKnowledge(newKnowledges?[indexPath.row])
+        case .ShowOldKnowledge:
+            _removeKnowledge(oldKnowledges?[indexPath.row])
+        }
     }
 }
 
@@ -183,6 +206,37 @@ extension KnowledgeListViewController {
             self._reloadDataFromDBNofity(changes, forStyle: KnowledgeListViewController.ListStyle.ShowOldKnowledge)
         })
     }
+    
+    private func _reloadTableView(style: ListStyle, action: (()->())) {
+        
+        func reload() {
+            tableView.beginUpdates()
+            reloadControl.addKnowledgeAction?()
+            reloadControl.showOldKnowledgeAction?()
+            tableView.endUpdates()
+            reloadControl.addKnowledgeAction = nil
+            reloadControl.showOldKnowledgeAction = nil
+        }
+        
+        func judgeToReload() {
+            if reloadControl.addKnowledgeAction != nil && reloadControl.showOldKnowledgeAction != nil {
+                reload()
+            } else {
+                //  有一个没有，则等1秒再调
+                delay(0.1, work: {
+                    reload()
+                })
+            }
+        }
+        
+        switch style {
+        case .AddKnowledge:
+            reloadControl.addKnowledgeAction = action
+        case .ShowOldKnowledge:
+            reloadControl.showOldKnowledgeAction = action
+        }
+        judgeToReload()
+    }
 }
 
 // MARK: - private for DB
@@ -200,6 +254,13 @@ extension KnowledgeListViewController {
     private func _updateKnowledge(withTitle title: String, mCount: Int) {
         try! realm?.write({ 
             realm?.create(Knowledge.self, value: ["title":title, "memoryCount":mCount, "updateTime":NSDate().timeIntervalSince1970], update: true)
+        })
+    }
+    
+    private func _removeKnowledge(knowedge: Knowledge?) {
+        guard let knowedge = knowedge else { return }
+        try! realm?.write({
+            realm?.delete(knowedge)
         })
     }
     
@@ -227,15 +288,14 @@ extension KnowledgeListViewController {
         case .Update(_, let deletions, let insertions, let modifications):
             // 检索结果被改变，因此将它们应用到 UITableView 当中
             if forStyle == ListStyle.ShowOldKnowledge && showOldKnowledge == false { return }
-            self.tableView.beginUpdates()
-            self.tableView.insertRowsAtIndexPaths(insertions.map { NSIndexPath(forRow: $0, inSection: forStyle.rawValue) },
-                                                  withRowAnimation: .Automatic)
-            self.tableView.deleteRowsAtIndexPaths(deletions.map { NSIndexPath(forRow: $0, inSection: forStyle.rawValue) },
-                                                  withRowAnimation: .Automatic)
-            self.tableView.reloadRowsAtIndexPaths(modifications.map { NSIndexPath(forRow: $0, inSection: forStyle.rawValue) },
-                                                  withRowAnimation: .Automatic)
-            self.tableView.endUpdates()
-
+            self._reloadTableView(forStyle, action: { 
+                self.tableView.insertRowsAtIndexPaths(insertions.map { NSIndexPath(forRow: $0, inSection: forStyle.rawValue) },
+                    withRowAnimation: .Automatic)
+                self.tableView.deleteRowsAtIndexPaths(deletions.map { NSIndexPath(forRow: $0, inSection: forStyle.rawValue) },
+                    withRowAnimation: .Automatic)
+                self.tableView.reloadRowsAtIndexPaths(modifications.map { NSIndexPath(forRow: $0, inSection: forStyle.rawValue) },
+                    withRowAnimation: .Automatic)
+            })
             break
         case .Error(let error):
             // 如果在后台工作线程中打开 Realm 文件的时候，就会发生错误
