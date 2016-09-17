@@ -1,4 +1,32 @@
 PODS:
+  - React/ART (0.32.0):
+    - React/Core
+  - React/Core (0.32.0):
+    - React/CSSLayout
+  - React/CSSLayout (0.32.0)
+  - React/RCTActionSheet (0.32.0):
+    - React/Core
+  - React/RCTAdSupport (0.32.0):
+    - React/Core
+  - React/RCTGeolocation (0.32.0):
+    - React/Core
+  - React/RCTImage (0.32.0):
+    - React/Core
+    - React/RCTNetwork
+  - React/RCTLinkingIOS (0.32.0):
+    - React/Core
+  - React/RCTNetwork (0.32.0):
+    - React/Core
+  - React/RCTPushNotification (0.32.0):
+    - React/Core
+  - React/RCTSettings (0.32.0):
+    - React/Core
+  - React/RCTText (0.32.0):
+    - React/Core
+  - React/RCTVibration (0.32.0):
+    - React/Core
+  - React/RCTWebSocket (0.32.0):
+    - React/Core
   - Realm (1.0.2):
     - Realm/Headers (= 1.0.2)
   - Realm/Headers (1.0.2)
@@ -11,12 +39,30 @@ PODS:
   - Then (1.0.3)
 
 DEPENDENCIES:
+  - React/ART (from `./ReactComponent/node_modules/react-native`)
+  - React/Core (from `./ReactComponent/node_modules/react-native`)
+  - React/RCTActionSheet (from `./ReactComponent/node_modules/react-native`)
+  - React/RCTAdSupport (from `./ReactComponent/node_modules/react-native`)
+  - React/RCTGeolocation (from `./ReactComponent/node_modules/react-native`)
+  - React/RCTImage (from `./ReactComponent/node_modules/react-native`)
+  - React/RCTLinkingIOS (from `./ReactComponent/node_modules/react-native`)
+  - React/RCTNetwork (from `./ReactComponent/node_modules/react-native`)
+  - React/RCTPushNotification (from `./ReactComponent/node_modules/react-native`)
+  - React/RCTSettings (from `./ReactComponent/node_modules/react-native`)
+  - React/RCTText (from `./ReactComponent/node_modules/react-native`)
+  - React/RCTVibration (from `./ReactComponent/node_modules/react-native`)
+  - React/RCTWebSocket (from `./ReactComponent/node_modules/react-native`)
   - RealmSwift (= 1.0.2)
   - RxCocoa (~> 2.6.0)
   - SnapKit
   - Then
 
+EXTERNAL SOURCES:
+  React:
+    :path: ./ReactComponent/node_modules/react-native
+
 SPEC CHECKSUMS:
+  React: 489b48d303cc0deb956bcaf65c66a41a7f2647fd
   Realm: 9d5c46a4d7d27958530a8dfc58f63a99e5c2cba3
   RealmSwift: 82f3ac5e24530143dddfde2033acc0d308f27d96
   RxCocoa: 89ab00d5753502520227940e3a0e0a0413683c6b
@@ -24,6 +70,6 @@ SPEC CHECKSUMS:
   SnapKit: 0dd2fd157330f1ea11fd84da13e6be8a7a22bae0
   Then: c2502b763132c80dfa64d325065d70c45e2d48ca
 
-PODFILE CHECKSUM: af6b1a65ece9485d2dd1f90cbc110a1dda8221b5
+PODFILE CHECKSUM: 4afa35ee15eeb0ca5db34ecbbe2e3a7d83976d3e
 
 COCOAPODS: 1.0.1

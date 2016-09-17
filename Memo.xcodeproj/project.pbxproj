@@ -13,6 +13,7 @@
 		B50F938C1D8A396800742FA0 /* MemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F938B1D8A396800742FA0 /* MemoTests.swift */; };
 		B50F93971D8A396800742FA0 /* MemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F93961D8A396800742FA0 /* MemoUITests.swift */; };
 		B50F93A91D8A3A1500742FA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F93A81D8A3A1500742FA0 /* AppDelegate.swift */; };
+		B5C3A8711D8D3596008BE2FA /* RNHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C3A8701D8D3596008BE2FA /* RNHelper.swift */; };
 		B5D70EFF1D8BD46B00EEE0F9 /* Bootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D70EFE1D8BD46B00EEE0F9 /* Bootstrap.swift */; };
 		B5EFB83D1D8A415900BF1F9B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB83A1D8A415900BF1F9B /* BaseViewController.swift */; };
 		B5EFB83F1D8A416A00BF1F9B /* AttributeStringMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB83E1D8A416A00BF1F9B /* AttributeStringMaker.swift */; };
@@ -84,6 +85,7 @@
 		B50F93961D8A396800742FA0 /* MemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoUITests.swift; sourceTree = "<group>"; };
 		B50F93981D8A396800742FA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B50F93A81D8A3A1500742FA0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B5C3A8701D8D3596008BE2FA /* RNHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNHelper.swift; sourceTree = "<group>"; };
 		B5D70EFE1D8BD46B00EEE0F9 /* Bootstrap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bootstrap.swift; sourceTree = "<group>"; };
 		B5EFB83A1D8A415900BF1F9B /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B5EFB83E1D8A416A00BF1F9B /* AttributeStringMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeStringMaker.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 		B50F93A51D8A39FA00742FA0 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B5C3A86F1D8D3574008BE2FA /* Service */,
 				B5EFB8391D8A415900BF1F9B /* Bases */,
 				B5EFB8961D8A4BE800BF1F9B /* Views */,
 				B5EFB8401D8A41BC00BF1F9B /* Extension */,
@@ -251,6 +254,14 @@
 				B50F93A81D8A3A1500742FA0 /* AppDelegate.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		B5C3A86F1D8D3574008BE2FA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B5C3A8701D8D3596008BE2FA /* RNHelper.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		B5EFB8391D8A415900BF1F9B /* Bases */ = {
@@ -626,6 +637,7 @@
 				B5EFB86E1D8A41BC00BF1F9B /* UINavigationBar+Stec.swift in Sources */,
 				B5EFB8721D8A41BC00BF1F9B /* UIView+Stec.swift in Sources */,
 				B5EFB86F1D8A41BC00BF1F9B /* UIScrollView+Stec.swift in Sources */,
+				B5C3A8711D8D3596008BE2FA /* RNHelper.swift in Sources */,
 				B5EFB8AF1D8AEDBE00BF1F9B /* Models.swift in Sources */,
 				B5EFB8701D8A41BC00BF1F9B /* UITabBar+Stec.swift in Sources */,
 				B5EFB8841D8A451500BF1F9B /* UIButton+Smart.swift in Sources */,
