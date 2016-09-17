@@ -10,9 +10,10 @@ target 'Memo' do
   pod 'Then'
   pod 'RealmSwift', '1.0.2'
   pod 'RxCocoa', '~> 2.6.0'
+  pod 'MBProgressHUD'
   # 取决于你的工程如何组织，你的node_modules文件夹可能会在别的地方。
   # 请将:path后面的内容修改为正确的路径（一定要确保正确～～）。
-  pod 'React', :path => ‘./ReactComponent/node_modules/react-native', :subspecs => [
+  pod 'React', :path => './ReactComponent/node_modules/react-native', :subspecs => [
   'Core',
   'ART',
   'RCTActionSheet',
@@ -27,4 +28,6 @@ target 'Memo' do
   'RCTWebSocket',
   'RCTLinkingIOS',
   ]
+  pod 'CodePush', :path => './ReactComponent/node_modules/react-native-code-push'
+  
 end

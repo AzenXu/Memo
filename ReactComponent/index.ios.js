@@ -5,50 +5,51 @@
  */
 
 import React, { Component } from 'react';
+import codePush from "react-native-code-push";
 import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Image
 } from 'react-native';
 
-class HelloRN extends Component {
+var Dimensionsss = require('Dimensions')
+var {width, height, scale} = Dimensionsss.get('window')
+var TimerMixin = require('react-timer-mixin');
+
+var RNInterface = require('react-native').NativeModules.RNInterface;  //  通过OC的桥接文件类名获取到这个类
+
+let HelloRN = React.createClass({
+  mixins: [TimerMixin],
+
+  componentDidMount(){
+      codePush.sync();
+  },
   render() {
+    this.setTimeout(
+      () => { this._setupMainView(); }, 500
+    );
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+      <View style = {styles.container}>
+        <Image source = {require('./img/welcomCat.jpg')}
+               style = {[{width: width, height: height}, {resizeMode: 'stretch'}]}
+          />
       </View>
     );
+  },
+  _setupMainView() {
+    RNInterface.sendMessage('{\"msgType":\"callKnowledgeList\"}')
   }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
 });
 
-//  项目名要有所对应
+const styles = StyleSheet.create({
+  container:{
+    flex:1,
+    backgroundColor:'white',
+    justifyContent:'center',
+    alignItems:'center'
+  }
+})
+
 AppRegistry.registerComponent('HelloRN', () => HelloRN);

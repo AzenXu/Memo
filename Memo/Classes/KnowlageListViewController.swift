@@ -46,16 +46,8 @@ class KnowledgeListViewController: BaseViewController {
 extension KnowledgeListViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-//        _setupViews()
-//        _setupDatas()
-        _testForRN()
-    }
-    
-    private func _testForRN() {
-        let strURL = "http://localhost:8081/index.ios.bundle?platform=ios&dev=true"
-        let jsCodeLocation = NSURL.init(string: strURL)
-        let rootView = RCTRootView(bundleURL: jsCodeLocation, moduleName: "HelloRN", initialProperties: nil, launchOptions: nil)
-        self.view = rootView
+        _setupViews()
+        _setupDatas()
     }
     
     private func _setupViews() {

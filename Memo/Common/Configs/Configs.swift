@@ -20,5 +20,8 @@ public struct MemoConfig {
         case Develop
         case Online
     }
-    
+}
+
+public enum MemoNofity: String {
+    case Memo_ChangeRootViewControllerToNative
 }

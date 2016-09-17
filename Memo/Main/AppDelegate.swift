@@ -12,14 +12,15 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var rootViewController: BaseViewController?
+    var rootViewControllerForRN: RNViewController?
+    var rootViewControllerForNative: UIViewController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         window = UIWindow()
-        rootViewController = KnowledgeListViewController()
-        let navigationCon = BaseNavigationController(rootViewController: rootViewController!)
-        window?.rootViewController = navigationCon
+        rootViewControllerForRN = RNViewController()
+        rootViewControllerForNative = BaseNavigationController(rootViewController: KnowledgeListViewController())
+        window?.rootViewController = rootViewControllerForRN
         window?.makeKeyAndVisible()
         
         return true
@@ -48,5 +49,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+extension AppDelegate {
+    func changeRootViewController(isRN rn: Bool) {
+        if rn {
+            window?.rootViewController = rootViewControllerForRN
+        } else {
+            rootViewControllerForNative?.modalTransitionStyle = .CrossDissolve
+            window?.rootViewController?.presentViewController(rootViewControllerForNative!, animated: true, completion: nil)
+        }
+        window?.makeKeyAndVisible()
+    }
 }
 

@@ -8,6 +8,10 @@
 
 import Foundation
 import RealmSwift
+
+
+let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+
 public struct Bootstrap {
     
     //  the realm instance

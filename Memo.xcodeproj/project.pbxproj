@@ -13,7 +13,10 @@
 		B50F938C1D8A396800742FA0 /* MemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F938B1D8A396800742FA0 /* MemoTests.swift */; };
 		B50F93971D8A396800742FA0 /* MemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F93961D8A396800742FA0 /* MemoUITests.swift */; };
 		B50F93A91D8A3A1500742FA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F93A81D8A3A1500742FA0 /* AppDelegate.swift */; };
-		B5C3A8711D8D3596008BE2FA /* RNHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C3A8701D8D3596008BE2FA /* RNHelper.swift */; };
+		B5BB98581D8D7180005DF013 /* RNHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB98571D8D7180005DF013 /* RNHelper.swift */; };
+		B5BB985B1D8D71AD005DF013 /* RNInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB985A1D8D71AD005DF013 /* RNInterface.m */; };
+		B5BB98621D8D8EC9005DF013 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = B5BB98601D8D8EC9005DF013 /* assets */; };
+		B5BB98631D8D8EC9005DF013 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = B5BB98611D8D8EC9005DF013 /* main.jsbundle */; };
 		B5D70EFF1D8BD46B00EEE0F9 /* Bootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D70EFE1D8BD46B00EEE0F9 /* Bootstrap.swift */; };
 		B5EFB83D1D8A415900BF1F9B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB83A1D8A415900BF1F9B /* BaseViewController.swift */; };
 		B5EFB83F1D8A416A00BF1F9B /* AttributeStringMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB83E1D8A416A00BF1F9B /* AttributeStringMaker.swift */; };
@@ -85,7 +88,12 @@
 		B50F93961D8A396800742FA0 /* MemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoUITests.swift; sourceTree = "<group>"; };
 		B50F93981D8A396800742FA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B50F93A81D8A3A1500742FA0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B5C3A8701D8D3596008BE2FA /* RNHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNHelper.swift; sourceTree = "<group>"; };
+		B5BB98571D8D7180005DF013 /* RNHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNHelper.swift; sourceTree = "<group>"; };
+		B5BB98591D8D71AD005DF013 /* RNInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNInterface.h; sourceTree = "<group>"; };
+		B5BB985A1D8D71AD005DF013 /* RNInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNInterface.m; sourceTree = "<group>"; };
+		B5BB98601D8D8EC9005DF013 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
+		B5BB98611D8D8EC9005DF013 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
+		B5C3A8761D8D45AC008BE2FA /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		B5D70EFE1D8BD46B00EEE0F9 /* Bootstrap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bootstrap.swift; sourceTree = "<group>"; };
 		B5EFB83A1D8A415900BF1F9B /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B5EFB83E1D8A416A00BF1F9B /* AttributeStringMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeStringMaker.swift; sourceTree = "<group>"; };
@@ -256,10 +264,20 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		B5BB98561D8D7180005DF013 /* ReactNative */ = {
+			isa = PBXGroup;
+			children = (
+				B5BB98571D8D7180005DF013 /* RNHelper.swift */,
+				B5BB98591D8D71AD005DF013 /* RNInterface.h */,
+				B5BB985A1D8D71AD005DF013 /* RNInterface.m */,
+			);
+			path = ReactNative;
+			sourceTree = "<group>";
+		};
 		B5C3A86F1D8D3574008BE2FA /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				B5C3A8701D8D3596008BE2FA /* RNHelper.swift */,
+				B5BB98561D8D7180005DF013 /* ReactNative */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -327,9 +345,12 @@
 		B5EFB8951D8A4B6C00BF1F9B /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				B5BB98601D8D8EC9005DF013 /* assets */,
+				B5BB98611D8D8EC9005DF013 /* main.jsbundle */,
 				B50F937D1D8A396800742FA0 /* Assets.xcassets */,
 				B50F937F1D8A396800742FA0 /* LaunchScreen.storyboard */,
 				B50F93821D8A396800742FA0 /* Info.plist */,
+				B5C3A8761D8D45AC008BE2FA /* Bridging-Header.h */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -479,8 +500,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5BB98621D8D8EC9005DF013 /* assets in Resources */,
 				B50F93811D8A396800742FA0 /* LaunchScreen.storyboard in Resources */,
 				B50F937E1D8A396800742FA0 /* Assets.xcassets in Resources */,
+				B5BB98631D8D8EC9005DF013 /* main.jsbundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,7 +660,8 @@
 				B5EFB86E1D8A41BC00BF1F9B /* UINavigationBar+Stec.swift in Sources */,
 				B5EFB8721D8A41BC00BF1F9B /* UIView+Stec.swift in Sources */,
 				B5EFB86F1D8A41BC00BF1F9B /* UIScrollView+Stec.swift in Sources */,
-				B5C3A8711D8D3596008BE2FA /* RNHelper.swift in Sources */,
+				B5BB985B1D8D71AD005DF013 /* RNInterface.m in Sources */,
+				B5BB98581D8D7180005DF013 /* RNHelper.swift in Sources */,
 				B5EFB8AF1D8AEDBE00BF1F9B /* Models.swift in Sources */,
 				B5EFB8701D8A41BC00BF1F9B /* UITabBar+Stec.swift in Sources */,
 				B5EFB8841D8A451500BF1F9B /* UIButton+Smart.swift in Sources */,
@@ -736,6 +760,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -755,6 +780,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -781,6 +807,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -793,6 +820,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -803,11 +831,14 @@
 			baseConfigurationReference = EF8135BA05317515BEDB91D0 /* Pods-Memo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = NO;
 				INFOPLIST_FILE = Memo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.azen.Memo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/Memo/Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/ReactComponent/node_modules/react-native-code-push/ios/CodePush/** ${SRCROOT}/ReactComponent/node_modules/react-native/**";
 			};
 			name = Debug;
 		};
@@ -816,11 +847,14 @@
 			baseConfigurationReference = 9DB06C7DEEB341BC0E06DC5A /* Pods-Memo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = NO;
 				INFOPLIST_FILE = Memo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.azen.Memo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/Memo/Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/ReactComponent/node_modules/react-native-code-push/ios/CodePush/** ${SRCROOT}/ReactComponent/node_modules/react-native/**";
 			};
 			name = Release;
 		};
