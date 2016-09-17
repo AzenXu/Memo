@@ -835,7 +835,7 @@
 				INFOPLIST_FILE = Memo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.azen.Memo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Azen.MemoBean;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/Memo/Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/ReactComponent/node_modules/react-native-code-push/ios/CodePush/** ${SRCROOT}/ReactComponent/node_modules/react-native/**";
@@ -851,7 +851,7 @@
 				INFOPLIST_FILE = Memo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.azen.Memo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Azen.MemoBean;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/Memo/Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/ReactComponent/node_modules/react-native-code-push/ios/CodePush/** ${SRCROOT}/ReactComponent/node_modules/react-native/**";
