@@ -32,9 +32,9 @@ let HelloRN = React.createClass({
     );
     return (
       <View style = {styles.container}>
-        <Image source = {require('./img/welcomCat.jpg')}
+        {/*<Image source = {require('./img/welcomCat.jpg')}
                style = {[{width: width, height: height}, {resizeMode: 'stretch'}]}
-          />
+          />*/}
       </View>
     );
   },
@@ -46,7 +46,7 @@ let HelloRN = React.createClass({
 const styles = StyleSheet.create({
   container:{
     flex:1,
-    backgroundColor:'rgb(168,143,107)',
+    backgroundColor:'rgba(168,143,107,0.8)',
     justifyContent:'center',
     alignItems:'center'
   }

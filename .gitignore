@@ -58,6 +58,9 @@ DerivedData
 *.xcuserstate
 project.xcworkspace
 workspace.xml
+*.jsbundle
+*.meta
+JSBundles/
 
 # Android/IJ
 #
