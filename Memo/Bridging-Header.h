@@ -11,5 +11,6 @@
 
 #import "CodePush.h"
 #import "RNInterface.h"
+#import "UncaughtExceptionHandler.h"
 
 #endif /* Bridging_Header_h */

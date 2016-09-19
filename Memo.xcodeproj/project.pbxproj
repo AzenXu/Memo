@@ -56,6 +56,7 @@
 		B5EFB8A81D8A702800BF1F9B /* CustomTableCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8A71D8A702800BF1F9B /* CustomTableCells.swift */; };
 		B5EFB8AC1D8A7AC100BF1F9B /* SimpleCustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8AB1D8A7AC100BF1F9B /* SimpleCustomViews.swift */; };
 		B5EFB8AF1D8AEDBE00BF1F9B /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8AE1D8AEDBE00BF1F9B /* Models.swift */; };
+		B5F6D6491D8FB70F0063DCF5 /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F6D6481D8FB70F0063DCF5 /* UncaughtExceptionHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,8 @@
 		B5EFB8A71D8A702800BF1F9B /* CustomTableCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableCells.swift; sourceTree = "<group>"; };
 		B5EFB8AB1D8A7AC100BF1F9B /* SimpleCustomViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCustomViews.swift; sourceTree = "<group>"; };
 		B5EFB8AE1D8AEDBE00BF1F9B /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		B5F6D6471D8FB70F0063DCF5 /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
+		B5F6D6481D8FB70F0063DCF5 /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		CE6A30358246874CC89A73AB /* Pods_Memo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Memo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF8135BA05317515BEDB91D0 /* Pods-Memo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Memo/Pods-Memo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -303,6 +306,7 @@
 		B5EFB83C1D8A415900BF1F9B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				B5F6D6431D8FB55C0063DCF5 /* exceptionHandler */,
 				B5EFB83E1D8A416A00BF1F9B /* AttributeStringMaker.swift */,
 				B5EFB8771D8A448A00BF1F9B /* KeyboardMan.swift */,
 				B5EFB8791D8A44A000BF1F9B /* Async.swift */,
@@ -386,6 +390,15 @@
 				B5EFB8AE1D8AEDBE00BF1F9B /* Models.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B5F6D6431D8FB55C0063DCF5 /* exceptionHandler */ = {
+			isa = PBXGroup;
+			children = (
+				B5F6D6471D8FB70F0063DCF5 /* UncaughtExceptionHandler.h */,
+				B5F6D6481D8FB70F0063DCF5 /* UncaughtExceptionHandler.m */,
+			);
+			path = exceptionHandler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -678,6 +691,7 @@
 				B5EFB8651D8A41BC00BF1F9B /* String+Stec.swift in Sources */,
 				B5EFB88C1D8A480600BF1F9B /* Configs.swift in Sources */,
 				B5EFB8871D8A451500BF1F9B /* UIColor+Smart.swift in Sources */,
+				B5F6D6491D8FB70F0063DCF5 /* UncaughtExceptionHandler.m in Sources */,
 				B5D70EFF1D8BD46B00EEE0F9 /* Bootstrap.swift in Sources */,
 				B50F93A91D8A3A1500742FA0 /* AppDelegate.swift in Sources */,
 				B5EFB86C1D8A41BC00BF1F9B /* UIImageView+Stec.swift in Sources */,

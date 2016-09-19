@@ -24,6 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = rootViewControllerForRN
         window?.makeKeyAndVisible()
         
+//        UncaughtExceptionHandler.installUncaughtExceptionHandler(true, showAlert: true)
+        
+        #if DEBUG
+            InstallUncaughtExceptionHandler()
+            UncaughtExceptionHandler.crashNow()
+        #else
+        #endif
+        
         return true
     }
 
