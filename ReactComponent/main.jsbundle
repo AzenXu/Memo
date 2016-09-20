@@ -1517,9 +1517,9 @@ this.setTimeout(
 function(){_this._setupMainView();},1);
 
 return(
-_react2.default.createElement(_reactNative.View,{style:styles.container},
-_react2.default.createElement(_reactNative.Image,{source:require(648 /* ./img/welcomCat.jpg */),
-style:[{width:width,height:height},{resizeMode:'stretch'}]})));
+_react2.default.createElement(_reactNative.View,{style:styles.container}));
+
+
 
 
 
@@ -1532,7 +1532,7 @@ RNInterface.sendMessage('{\"msgType":\"callKnowledgeList\"}');
 var styles=_reactNative.StyleSheet.create({
 container:{
 flex:1,
-backgroundColor:'rgb(168,143,107)',
+backgroundColor:'rgba(168,143,107,0.8)',
 justifyContent:'center',
 alignItems:'center'}});
 
@@ -81831,7 +81831,5 @@ isPending:false};
 return{local:local,remote:remote};
 };
 }, "react-native-code-push/package-mixins.js");
-__d(648 /* Memo/img/welcomCat.jpg */, function(global, require, module, exports) {module.exports = require(169 /* react-native/Libraries/Image/AssetRegistry */).registerAsset({"__packager_asset":true,"fileSystemLocation":"/Users/Azen/Documents/Code/Memo/ReactComponent/img","httpServerLocation":"/assets/img","width":640,"height":960,"scales":[1],"files":["/Users/Azen/Documents/Code/Memo/ReactComponent/img/welcomCat.jpg"],"hash":"3f3b02118058a6ad52f16839e2f166db","name":"welcomCat","type":"jpg"});
-}, "Memo/img/welcomCat.jpg");
 ;require(195);
 ;require(0);

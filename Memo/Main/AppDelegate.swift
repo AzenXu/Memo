@@ -28,7 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         #if DEBUG
             InstallUncaughtExceptionHandler()
-            UncaughtExceptionHandler.crashNow()
         #else
         #endif
         
@@ -51,6 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        ApplicationExtensions.dealWithSharedContent()
     }
 
     func applicationWillTerminate(application: UIApplication) {
