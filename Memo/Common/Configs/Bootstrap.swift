@@ -27,5 +27,18 @@ public struct Bootstrap {
         print(config.fileURL?.absoluteString)
         return config
     }
-    
+}
+
+public extension Bootstrap {
+    public static func dealDatas() {
+        /*
+            due to uncaught exception 'NSInvalidUnarchiveOperationException', reason: '*** -[NSKeyedUnarchiver decodeObjectForKey:]: cannot decode object of class (ShareExtension.KnowledgeBridge) for key (NS.objects); the class may be defined in source code or a library that is not linked'
+        */
+        guard let knowledgeBridges = MemoShareDataTool.loadData() else { return }
+        let knowledges = knowledgeBridges.map { return $0.vatting() }
+        let realm = Bootstrap.cachedDataRealm
+        try! realm?.write({
+            realm?.add(knowledges, update: true)
+        })
+    }
 }

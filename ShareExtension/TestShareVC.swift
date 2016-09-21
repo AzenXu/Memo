@@ -9,9 +9,6 @@
 import UIKit
 import Social
 
-public let shareSuite = "group.azen.MemoBean"
-public let shareUserDefaults = NSUserDefaults(suiteName: shareSuite)
-
 class TestShareVC: SLComposeServiceViewController {
 
     override func isContentValid() -> Bool {
@@ -30,8 +27,8 @@ class TestShareVC: SLComposeServiceViewController {
             self.write(toUserDefault: "true", key: "has-new-share")
             
             //  3. 测下写好了没
-            let object = shareUserDefaults?.objectForKey("share-url")
-            let obj2 = shareUserDefaults?.objectForKey("has-new-share")
+            let object = MemoShareUserDefault?.objectForKey("share-url")
+            let obj2 = MemoShareUserDefault?.objectForKey("has-new-share")
             print(obj2)
             print(object)
             //  4. 处理完成关闭分享窗口
@@ -41,11 +38,11 @@ class TestShareVC: SLComposeServiceViewController {
     
     
     private func write(toUserDefault content: String, key: String) {
-        shareUserDefaults!.setObject(content, forKey: key)
+        MemoShareUserDefault!.setObject(content, forKey: key)
     }
     
     private func wirte(toDir content: String)  {
-        let groupURL = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier(shareSuite)
+        let groupURL = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier(MemoShareSuitName)
         let fileURL = groupURL?.URLByAppendingPathComponent("demo.text")
         try! content.writeToURL(fileURL!, atomically: true, encoding: NSUTF8StringEncoding)
     }

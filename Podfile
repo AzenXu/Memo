@@ -6,8 +6,8 @@ target 'Memo' do
   use_frameworks!
 
   # Pods for Memo
-  pod 'SnapKit'
-  pod 'Then'
+  pod 'SnapKit', '0.22.0'
+  pod 'Then', '1.0.3'
   pod 'RealmSwift', '1.0.2'
   pod 'RxCocoa', '~> 2.6.0'
   pod 'MBProgressHUD'
@@ -30,4 +30,11 @@ target 'Memo' do
   ]
   pod 'CodePush', :path => './ReactComponent/node_modules/react-native-code-push'
   
+end
+
+target 'ShareExtension' do
+    use_frameworks!
+    pod 'SnapKit', '0.22.0'
+    pod 'Then', '1.0.3'
+    pod 'RealmSwift', '1.0.2'
 end

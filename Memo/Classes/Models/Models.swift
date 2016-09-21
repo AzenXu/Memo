@@ -19,3 +19,14 @@ public class Knowledge: Object {
         return "title"
     }
 }
+
+public  extension KnowledgeBridge {
+    public func vatting() -> Knowledge {
+        let knowledge = Knowledge()
+        knowledge.title = title
+        knowledge.desc = desc
+        knowledge.updateTime = updateTime
+        knowledge.memoryCount = 0
+        return knowledge
+    }
+}

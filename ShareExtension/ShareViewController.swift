@@ -35,15 +35,13 @@ class ShareViewController: UIViewController {
     
     @IBAction func addToMemoClick() {
         //  2. 写入userDefault
-        if let title = titleLabel.text {
-            self.write(toUserDefault: title, key: "share-url")
-            self.write(toUserDefault: "true", key: "has-new-share")
-            
-            //  3. 测下写好了没
-            let object = shareUserDefaults?.objectForKey("share-url")
-            let obj2 = shareUserDefaults?.objectForKey("has-new-share")
-            print(obj2)
-            print(object)
+        if let title = titleLabel.attributedText?.string {
+            let desc = descTextView.text == "这里可以添加点备注...虽然目前可能没什么大用" ? "" : descTextView.text
+            write(toUserDefault: title, desc: desc)
+//            //  3. 测下写好了没
+//            let obj = MemoShareDataTool.loadData()
+//            print(obj?.first?.title)
+//            print(obj?.first?.desc)
         }
         extensionContext?.completeRequestReturningItems(nil, completionHandler: nil)
     }
@@ -96,12 +94,15 @@ extension ShareViewController {
             }
         }
     }
-    private func write(toUserDefault content: String, key: String) {
-        shareUserDefaults!.setObject(content, forKey: key)
+    private func write(toUserDefault title: String, desc: String = "") {
+        let test = KnowledgeBridge()
+        test.title = title
+        test.desc = desc
+        MemoShareDataTool.save(test)
     }
     
     private func wirte(toDir content: String)  {
-        let groupURL = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier(shareSuite)
+        let groupURL = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier(MemoShareSuitName)
         let fileURL = groupURL?.URLByAppendingPathComponent("demo.text")
         try! content.writeToURL(fileURL!, atomically: true, encoding: NSUTF8StringEncoding)
     }

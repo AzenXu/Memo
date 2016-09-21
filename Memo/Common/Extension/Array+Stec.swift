@@ -16,4 +16,8 @@ extension Array {
             return nil
         }
     }
+    
+    public mutating func append(newElement: Array) {
+        appendContentsOf(newElement)
+    }
 }
