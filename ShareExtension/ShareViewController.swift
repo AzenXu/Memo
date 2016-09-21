@@ -1,32 +1,42 @@
 //
-//  ShareViewController.swift
-//  ShareExtension
+//  CustomViewController.swift
+//  Memo
 //
-//  Created by XuAzen on 16/9/20.
+//  Created by XuAzen on 16/9/21.
 //  Copyright © 2016年 azen. All rights reserved.
 //
 
 import UIKit
-import Social
 
-public let shareSuite = "group.azen.MemoBean"
-public let shareUserDefaults = NSUserDefaults(suiteName: shareSuite)
-
-class ShareViewController: SLComposeServiceViewController {
-
-    override func isContentValid() -> Bool {
-        // Do validation of contentText and/or NSExtensionContext attachments here
-        return true
-    }
-
-    override func didSelectPost() {
-        //  1. 获取宿主分享内容
-        print("这里应该转菊花")
+class ShareViewController: UIViewController {
+    @IBOutlet weak var shareBox: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descTextView: UITextView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        shareBox.layer.cornerRadius = 5
+        shareBox.clipsToBounds = true
+        
+        
+        guard let info = getExtensionContextInfos().first else { return }
+        self.titleLabel.attributedText = info.content ?? NSAttributedString(string: "啊哦，木有获取到")
+        self.descTextView.text = info.title?.string ?? "这里可以添加点备注...虽然目前可能没什么大用" //"这里可以添加点备注...虽然目前可能没什么大用..."
+        
         let attachmentType = "public.url"
-        getSingleAttachement(withIdentifier: attachmentType) { [weak self] (result) in
+        getSingleAttachement(withIdentifier: attachmentType) { [weak self] (result, title, content) in
             guard let `self` = self, result = result as? NSURL else {return}
-            //  2. 写入userDefault
-            self.write(toUserDefault: result.absoluteString, key: "share-url")
+            dispatch_async(dispatch_get_main_queue(), {
+                self.titleLabel.attributedText = title ?? content ?? NSAttributedString(string: "啊哦，木有获取到")
+                self.descTextView.text = result.absoluteString
+            })
+        }
+    }
+    
+    @IBAction func addToMemoClick() {
+        //  2. 写入userDefault
+        if let title = titleLabel.text {
+            self.write(toUserDefault: title, key: "share-url")
             self.write(toUserDefault: "true", key: "has-new-share")
             
             //  3. 测下写好了没
@@ -34,11 +44,58 @@ class ShareViewController: SLComposeServiceViewController {
             let obj2 = shareUserDefaults?.objectForKey("has-new-share")
             print(obj2)
             print(object)
-            //  4. 处理完成关闭分享窗口
-            self.extensionContext!.completeRequestReturningItems([], completionHandler: nil)
         }
+        extensionContext?.completeRequestReturningItems(nil, completionHandler: nil)
     }
     
+    @IBAction func cancelClick() {
+        extensionContext?.cancelRequestWithError(NSError(domain: "CustomShareError", code: NSUserCancelledError, userInfo: nil))
+    }
+    
+}
+
+struct ExtensionContextInfo {
+    var title: NSAttributedString?
+    var content: NSAttributedString?
+    
+    init(title: NSAttributedString?, content: NSAttributedString?) {
+        self.title = title
+        self.content = content
+    }
+}
+
+extension ShareViewController {
+    
+    private func getExtensionContextInfos() -> [ExtensionContextInfo] {
+        var infos = [ExtensionContextInfo]()
+        for i in 0..<extensionContext!.inputItems.count {
+            guard let item = extensionContext?.inputItems[i] as? NSExtensionItem else { break }
+            let title = item.attributedTitle
+            let content = item.attributedContentText
+            infos.append(ExtensionContextInfo(title: title, content: content))
+        }
+        return infos
+    }
+    
+    private func getSingleAttachement(withIdentifier UTIString: String, callBack: ((result: NSSecureCoding, title: NSAttributedString?, content: NSAttributedString?)->())?) {
+        //  从分享内容中摘出url来
+        //  获取宿主应用分享的内容
+        for i in 0..<extensionContext!.inputItems.count {
+            guard let item = extensionContext?.inputItems[i] as? NSExtensionItem, attachments = item.attachments else { break }
+            let title = item.attributedTitle
+            let content = item.attributedContentText
+            for j in 0..<attachments.count {
+                guard let itemProvider = attachments[j] as? NSItemProvider else { break }
+                if itemProvider.hasItemConformingToTypeIdentifier(UTIString) {
+                    itemProvider.loadItemForTypeIdentifier(UTIString, options: nil, completionHandler: { (item, error) in
+                        if let item = item {
+                            callBack?(result: item, title: title, content: content)
+                        }
+                    })
+                }
+            }
+        }
+    }
     private func write(toUserDefault content: String, key: String) {
         shareUserDefaults!.setObject(content, forKey: key)
     }
@@ -48,32 +105,4 @@ class ShareViewController: SLComposeServiceViewController {
         let fileURL = groupURL?.URLByAppendingPathComponent("demo.text")
         try! content.writeToURL(fileURL!, atomically: true, encoding: NSUTF8StringEncoding)
     }
-    
-    private func getSingleAttachement(withIdentifier UTIString: String, callBack: ((result: NSSecureCoding)->())?) {
-        //  从分享内容中摘出url来
-        //  获取宿主应用分享的内容
-        for i in 0..<extensionContext!.inputItems.count {
-            guard let item = extensionContext?.inputItems[i] as? NSExtensionItem, attachments = item.attachments else { break }
-            for j in 0..<attachments.count {
-                guard let itemProvider = attachments[j] as? NSItemProvider else { break }
-                if itemProvider.hasItemConformingToTypeIdentifier(UTIString) {
-                    itemProvider.loadItemForTypeIdentifier(UTIString, options: nil, completionHandler: { (item, error) in
-                        if let item = item {
-                            callBack?(result: item)
-                        }
-                    })
-                }
-            }
-        }
-    }
-    
-    override func didSelectCancel() {
-        super.didSelectCancel()
-    }
-
-    override func configurationItems() -> [AnyObject]! {
-        // To add configuration options via table cells at the bottom of the sheet, return an array of SLComposeSheetConfigurationItem here.
-        return []
-    }
-
 }

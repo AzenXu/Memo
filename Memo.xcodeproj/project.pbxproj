@@ -13,7 +13,8 @@
 		B50F938C1D8A396800742FA0 /* MemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F938B1D8A396800742FA0 /* MemoTests.swift */; };
 		B50F93971D8A396800742FA0 /* MemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F93961D8A396800742FA0 /* MemoUITests.swift */; };
 		B50F93A91D8A3A1500742FA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F93A81D8A3A1500742FA0 /* AppDelegate.swift */; };
-		B560FF471D90B0F700AC6AF0 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B560FF461D90B0F700AC6AF0 /* ShareViewController.swift */; };
+		B52192EB1D9210510024271E /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52192EA1D9210510024271E /* ShareViewController.swift */; };
+		B560FF471D90B0F700AC6AF0 /* TestShareVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B560FF461D90B0F700AC6AF0 /* TestShareVC.swift */; };
 		B560FF4A1D90B0F700AC6AF0 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B560FF481D90B0F700AC6AF0 /* MainInterface.storyboard */; };
 		B560FF4E1D90B0F700AC6AF0 /* ShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B560FF441D90B0F700AC6AF0 /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B560FF561D90BB4B00AC6AF0 /* ApplicationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B560FF551D90BB4B00AC6AF0 /* ApplicationExtensions.swift */; };
@@ -114,8 +115,9 @@
 		B50F93961D8A396800742FA0 /* MemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoUITests.swift; sourceTree = "<group>"; };
 		B50F93981D8A396800742FA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B50F93A81D8A3A1500742FA0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B52192EA1D9210510024271E /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		B560FF441D90B0F700AC6AF0 /* ShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		B560FF461D90B0F700AC6AF0 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		B560FF461D90B0F700AC6AF0 /* TestShareVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestShareVC.swift; sourceTree = "<group>"; };
 		B560FF491D90B0F700AC6AF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		B560FF4B1D90B0F700AC6AF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B560FF531D90B88A00AC6AF0 /* Memo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Memo.entitlements; sourceTree = "<group>"; };
@@ -321,7 +323,8 @@
 			isa = PBXGroup;
 			children = (
 				B560FF541D90B92800AC6AF0 /* ShareExtension.entitlements */,
-				B560FF461D90B0F700AC6AF0 /* ShareViewController.swift */,
+				B560FF461D90B0F700AC6AF0 /* TestShareVC.swift */,
+				B52192EA1D9210510024271E /* ShareViewController.swift */,
 				B560FF481D90B0F700AC6AF0 /* MainInterface.storyboard */,
 				B560FF4B1D90B0F700AC6AF0 /* Info.plist */,
 			);
@@ -836,7 +839,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B560FF471D90B0F700AC6AF0 /* ShareViewController.swift in Sources */,
+				B560FF471D90B0F700AC6AF0 /* TestShareVC.swift in Sources */,
+				B52192EB1D9210510024271E /* ShareViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1135,6 +1139,7 @@
 				B560FF511D90B0F700AC6AF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
