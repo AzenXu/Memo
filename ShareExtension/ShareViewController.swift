@@ -34,14 +34,9 @@ class ShareViewController: UIViewController {
     }
     
     @IBAction func addToMemoClick() {
-        //  2. 写入userDefault
         if let title = titleLabel.attributedText?.string {
             let desc = descTextView.text == "这里可以添加点备注...虽然目前可能没什么大用" ? "" : descTextView.text
-            write(toUserDefault: title, desc: desc)
-//            //  3. 测下写好了没
-//            let obj = MemoShareDataTool.loadData()
-//            print(obj?.first?.title)
-//            print(obj?.first?.desc)
+            write(toRealm: title, desc: desc)
         }
         extensionContext?.completeRequestReturningItems(nil, completionHandler: nil)
     }
@@ -94,13 +89,23 @@ extension ShareViewController {
             }
         }
     }
+    
+    private func write(toRealm title: String, desc: String = "") {
+        let kno = Knowledge()
+        kno.title = title
+        kno.desc = desc
+        MemoShareDataTool.save(kno)
+    }
+}
+
+//  废弃的方法
+extension ShareViewController {
     private func write(toUserDefault title: String, desc: String = "") {
         let test = KnowledgeBridge()
         test.title = title
         test.desc = desc
         MemoShareDataTool.save(test)
     }
-    
     private func wirte(toDir content: String)  {
         let groupURL = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier(MemoShareSuitName)
         let fileURL = groupURL?.URLByAppendingPathComponent("demo.text")

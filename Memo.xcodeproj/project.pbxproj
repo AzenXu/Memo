@@ -15,9 +15,15 @@
 		B50F93971D8A396800742FA0 /* MemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F93961D8A396800742FA0 /* MemoUITests.swift */; };
 		B50F93A91D8A3A1500742FA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50F93A81D8A3A1500742FA0 /* AppDelegate.swift */; };
 		B52192EB1D9210510024271E /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52192EA1D9210510024271E /* ShareViewController.swift */; };
-		B560FF471D90B0F700AC6AF0 /* TestShareVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B560FF461D90B0F700AC6AF0 /* TestShareVC.swift */; };
 		B560FF4A1D90B0F700AC6AF0 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B560FF481D90B0F700AC6AF0 /* MainInterface.storyboard */; };
 		B560FF4E1D90B0F700AC6AF0 /* ShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B560FF441D90B0F700AC6AF0 /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B5A080E71D934F9F00DDA164 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8AE1D8AEDBE00BF1F9B /* Models.swift */; };
+		B5A080EA1D934FF200DDA164 /* DataTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A080E91D934FF200DDA164 /* DataTools.swift */; };
+		B5A080EB1D93525A00DDA164 /* DataTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A080E91D934FF200DDA164 /* DataTools.swift */; };
+		B5A080EC1D93529400DDA164 /* Configs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB88B1D8A480600BF1F9B /* Configs.swift */; };
+		B5A080ED1D93529A00DDA164 /* Bootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D70EFE1D8BD46B00EEE0F9 /* Bootstrap.swift */; };
+		B5A080EE1D935C0F00DDA164 /* ModesBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DD5C051D92B56A00148E4D /* ModesBridge.swift */; };
+		B5A080EF1D935C1A00DDA164 /* ModesBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DD5C051D92B56A00148E4D /* ModesBridge.swift */; };
 		B5BB98581D8D7180005DF013 /* RNHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BB98571D8D7180005DF013 /* RNHelper.swift */; };
 		B5BB985B1D8D71AD005DF013 /* RNInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB985A1D8D71AD005DF013 /* RNInterface.m */; };
 		B5BB98621D8D8EC9005DF013 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = B5BB98601D8D8EC9005DF013 /* assets */; };
@@ -25,8 +31,6 @@
 		B5D70EFF1D8BD46B00EEE0F9 /* Bootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D70EFE1D8BD46B00EEE0F9 /* Bootstrap.swift */; };
 		B5D71C9B1D92E464005BB4D6 /* Array+Stec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8411D8A41BC00BF1F9B /* Array+Stec.swift */; };
 		B5D71C9C1D92E49C005BB4D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B50F937D1D8A396800742FA0 /* Assets.xcassets */; };
-		B5DD5C061D92B56A00148E4D /* ModesBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DD5C051D92B56A00148E4D /* ModesBridge.swift */; };
-		B5DD5C071D92B58200148E4D /* ModesBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DD5C051D92B56A00148E4D /* ModesBridge.swift */; };
 		B5EFB83D1D8A415900BF1F9B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB83A1D8A415900BF1F9B /* BaseViewController.swift */; };
 		B5EFB83F1D8A416A00BF1F9B /* AttributeStringMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB83E1D8A416A00BF1F9B /* AttributeStringMaker.swift */; };
 		B5EFB85B1D8A41BC00BF1F9B /* Array+Stec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EFB8411D8A41BC00BF1F9B /* Array+Stec.swift */; };
@@ -129,6 +133,7 @@
 		B560FF4B1D90B0F700AC6AF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B560FF531D90B88A00AC6AF0 /* Memo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Memo.entitlements; sourceTree = "<group>"; };
 		B560FF541D90B92800AC6AF0 /* ShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ShareExtension.entitlements; sourceTree = "<group>"; };
+		B5A080E91D934FF200DDA164 /* DataTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTools.swift; sourceTree = "<group>"; };
 		B5BB98571D8D7180005DF013 /* RNHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNHelper.swift; sourceTree = "<group>"; };
 		B5BB98591D8D71AD005DF013 /* RNInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNInterface.h; sourceTree = "<group>"; };
 		B5BB985A1D8D71AD005DF013 /* RNInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNInterface.m; sourceTree = "<group>"; };
@@ -334,6 +339,14 @@
 			path = ShareExtension;
 			sourceTree = "<group>";
 		};
+		B5A080E81D934FDE00DDA164 /* DataTool */ = {
+			isa = PBXGroup;
+			children = (
+				B5A080E91D934FF200DDA164 /* DataTools.swift */,
+			);
+			path = DataTool;
+			sourceTree = "<group>";
+		};
 		B5BB98561D8D7180005DF013 /* ReactNative */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,6 +360,7 @@
 		B5C3A86F1D8D3574008BE2FA /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				B5A080E81D934FDE00DDA164 /* DataTool */,
 				B5BB98561D8D7180005DF013 /* ReactNative */,
 			);
 			path = Service;
@@ -824,7 +838,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5DD5C061D92B56A00148E4D /* ModesBridge.swift in Sources */,
+				B5A080EE1D935C0F00DDA164 /* ModesBridge.swift in Sources */,
 				B5EFB8901D8A486C00BF1F9B /* GroupListViewController.swift in Sources */,
 				B5EFB8621D8A41BC00BF1F9B /* NSObject+Stec.swift in Sources */,
 				B5EFB8851D8A451500BF1F9B /* UITableView+Smart.swift in Sources */,
@@ -858,6 +872,7 @@
 				B5EFB8AC1D8A7AC100BF1F9B /* SimpleCustomViews.swift in Sources */,
 				B5EFB8731D8A41BC00BF1F9B /* UIViewcontroller+Stec.swift in Sources */,
 				B5EFB86B1D8A41BC00BF1F9B /* UIImage+Stec.swift in Sources */,
+				B5A080EA1D934FF200DDA164 /* DataTools.swift in Sources */,
 				B5EFB89E1D8A4C1100BF1F9B /* BasicCollectionCell.swift in Sources */,
 				B5EFB8611D8A41BC00BF1F9B /* NSDate+Stec.swift in Sources */,
 				B5EFB85B1D8A41BC00BF1F9B /* Array+Stec.swift in Sources */,
@@ -891,9 +906,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5A080EF1D935C1A00DDA164 /* ModesBridge.swift in Sources */,
+				B5A080ED1D93529A00DDA164 /* Bootstrap.swift in Sources */,
+				B5A080EC1D93529400DDA164 /* Configs.swift in Sources */,
+				B5A080EB1D93525A00DDA164 /* DataTools.swift in Sources */,
+				B5A080E71D934F9F00DDA164 /* Models.swift in Sources */,
 				B5D71C9B1D92E464005BB4D6 /* Array+Stec.swift in Sources */,
-				B5DD5C071D92B58200148E4D /* ModesBridge.swift in Sources */,
-				B560FF471D90B0F700AC6AF0 /* TestShareVC.swift in Sources */,
 				B52192EB1D9210510024271E /* ShareViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
