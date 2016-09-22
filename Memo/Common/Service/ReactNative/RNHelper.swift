@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import React
+import CommonConfigKit
 
 class RNHelper {
     class var sharedInstance: RNHelper {
