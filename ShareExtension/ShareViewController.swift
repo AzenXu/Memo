@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MemoFoundation
 
 class ShareViewController: UIViewController {
     @IBOutlet weak var shareBox: UIView!

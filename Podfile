@@ -45,3 +45,10 @@ target 'TodayExtension' do
     pod 'Then', '1.0.3'
     pod 'RealmSwift', '1.0.2'
 end
+
+target 'MemoFoundation' do
+    use_frameworks!
+    pod 'SnapKit', '0.22.0'
+    pod 'Then', '1.0.3'
+    pod 'RealmSwift', '1.0.2'
+end
